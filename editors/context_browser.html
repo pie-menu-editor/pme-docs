@@ -1,0 +1,651 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Choosing a Keymap" href="../reference/keymap_guide.html"><link rel="prev" title="Scripting" href="../reference/scripting.html">
+        <link rel="canonical" href="https://docs.pie-menu-editor.com/editors/context_browser.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
+        <title>Context Browser - Pie Menu Editor 2.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=6b3a701d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/editor-overview.css?v=8fac9edf" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0d82d0;
+  --color-brand-content: #0d82d0;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    (function () {
+        if (window.__PMEBeaconInitialized) {
+            return;
+        }
+
+        window.__PMEBeaconInitialized = true;
+
+        !function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+        window.Beacon('init', 'e458ab6a-6436-4e96-a0b6-038336504b24');
+        window.Beacon('config', {
+            display: {
+                style: 'manual'
+            }
+        });
+
+        window.PMEDocs = window.PMEDocs || {};
+        window.PMEDocs.beaconPrefillTemplates = {
+            supportRequest: [
+                'Summary:',
+                '- What went wrong?',
+                '',
+                'Steps to reproduce:',
+                '1.',
+                '2.',
+                '3.',
+                '',
+                'What happened:',
+                '- Describe the actual result.',
+                '',
+                'Environment:',
+                '- Blender version:',
+                '- PME version:',
+                '- OS:',
+                '',
+                'Attachments:',
+                '- PME setup JSON:',
+                '- Console output / screenshot:',
+                '- Small .blend file (if relevant):',
+                '',
+                'Additional notes:',
+                '- Anything else that may help.'
+            ].join('\n')
+        };
+
+        window.PMEDocs.openSupportBeacon = function (event, templateName) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            if (typeof window.Beacon === 'function') {
+                const prefillText = window.PMEDocs.beaconPrefillTemplates[templateName];
+                if (prefillText) {
+                    window.Beacon('prefill', {
+                        text: prefillText
+                    });
+                }
+
+                window.Beacon('open');
+                window.Beacon('navigate', '/ask/message/');
+                return false;
+            }
+
+            return true;
+        };
+
+        document.addEventListener('click', function (event) {
+            const trigger = event.target.closest('[data-beacon-open]');
+            if (!trigger) {
+                return;
+            }
+
+            window.PMEDocs.openSupportBeacon(event, trigger.dataset.beaconTemplate);
+        });
+    }());
+</script></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Pie Menu Editor 2.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">Pie Menu Editor 2.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/basic_pie_menu.html">Create Your First Pie Menu</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/examples.html">Examples &amp; Ideas</a><input aria-label="Toggle navigation of Examples &amp; Ideas" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/scripting_workflow.html">Code Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Editors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="editor_common_elements.html">Common Editor Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pie_menu_editor.html">Pie Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vector_menu_editor.html">Vector Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regular_menu_editor.html">Regular Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="popup_dialog_editor.html">Pop-up Dialog Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating_panel_editor.html">Floating Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sticky_key_editor.html">Sticky Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack_key_editor.html">Stack Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macro_operator_editor.html">Macro Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modal_operator_editor.html">Modal Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="property_editor.html">Property Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="property_stack_editor.html">Property Stack Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context_router_editor.html">Context Router Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="side_panel_editor.html">Side Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hiding_unused_panels.html">Hiding Unused Panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive_panels.html">Interactive Panels and Extend Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui_customization.html">UI Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context_menu.html">Capture Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_icons.html">Custom Icons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../reference/command_text.html">Writing and Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/scripting.html">API Reference</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Context Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/keymap_guide.html">Choosing a Keymap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/keymap_duplicates.html">Keymap Conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/poll_method.html">Poll Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/terminology.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/file_locations.html">File Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/boot_options.html">Boot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/developer_options.html">Developer Options</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">Reference Guide</a><input aria-label="Toggle navigation of Reference Guide" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/original_author_videos.html">Original Author’s Videos</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/faq.html#known-issues">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/get_support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/changelog.html">Change Log</a></li>
+</ul>
+
+</div>
+</div>
+<nav class="documentation-languages" aria-label="Language">
+  
+  <a href="context_browser.html" lang="en" hreflang="en" aria-label="English" title="English" aria-current="true"><span aria-hidden="true">🇺🇸</span></a>
+  
+  <a href="../ja/editors/context_browser.html" lang="ja" hreflang="ja" aria-label="日本語" title="日本語"><span aria-hidden="true">🇯🇵</span></a>
+  
+</nav>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.documentation-languages a')];
+  const targets = links.map(link => link.getAttribute('href'));
+  function syncFragment() {
+    links.forEach((link, index) => { link.href = targets[index] + window.location.hash; });
+  }
+  syncFragment();
+  window.addEventListener('hashchange', syncFragment);
+})();
+</script>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/editors/context_browser.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="context-browser">
+<span id="id1"></span><h1>Context Browser<a class="headerlink" href="#context-browser" title="Link to this heading">¶</a></h1>
+<p>The property you want to use, or the current state you need for a condition, may be hard to find in Blender’s interface. <strong>Context Browser (CB)</strong> lets you explore context and data to inspect property values, Python paths, and methods.</p>
+<p>You can edit properties as you find them and copy their paths or values. With PME, you can send a property to the Capture Menu and add it to your own menu. CB can also be used on its own.</p>
+<p>If you have purchased PME-F, <a class="reference internal" href="../getting_started/installation.html"><span class="std std-doc">set up the PME Repository</span></a>, then search for <strong>Context Browser</strong> in Blender’s Preferences → Get Extensions and install and enable it.</p>
+<section id="interface-overview">
+<h2>Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this heading">¶</a></h2>
+<figure class="pme-overview pme-overview--editor" style="--editor-width:1622px">
+<div class="pme-overview__image">
+<img src="../_static/images/editors/overview/context-browser.png" width="1622" height="1215" alt="Context Browser showing C.area, with object color and theme vertex size pinned below.">
+<a class="pme-overview__spot" style="--x:2.8977%;--y:11.2757%;--w:94.0814%;--h:5.2675%" href="context_browser.html#cb-navigation" aria-label="1 Go to Paths and Bookmarks"><span class="pme-overview__number">1</span><span class="pme-overview__tip"><strong>Paths and Bookmarks</strong>Check the current path and navigate its hierarchy.</span></a>
+<a class="pme-overview__spot" style="--x:2.9593%;--y:16.7901%;--w:37.6079%;--h:44.6914%" href="context_browser.html#cb-objects" aria-label="2 Go to Objects and Collections"><span class="pme-overview__number">2</span><span class="pme-overview__tip"><strong>Objects and Collections</strong>Explore members and open the next level.</span></a>
+<a class="pme-overview__spot" style="--x:41.8002%;--y:16.7901%;--w:54.5006%;--h:44.6914%" href="context_browser.html#cb-members" aria-label="3 Go to Properties and Methods"><span class="pme-overview__number">3</span><span class="pme-overview__tip"><strong>Properties and Methods</strong>Inspect or edit values and choose actions for a target.</span></a>
+<a class="pme-overview__spot" style="--x:2.9593%;--y:62.4691%;--w:93.3416%;--h:8.4774%" href="context_browser.html#cb-filters" aria-label="4 Go to Search and Display Filters"><span class="pme-overview__number">4</span><span class="pme-overview__tip"><strong>Search and Display Filters</strong>Filter the lists by name or type.</span></a>
+<a class="pme-overview__spot" style="--x:2.9593%;--y:71.6049%;--w:93.7731%;--h:19.0947%" href="context_browser.html#cb-pins" aria-label="5 Go to Pins"><span class="pme-overview__number">5</span><span class="pme-overview__tip"><strong>Pins</strong>Inspect, edit, or copy pinned targets.</span></a>
+</div>
+<figcaption>Context Browser overview. Select a number to read about that part of the interface.</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#cb-navigation"><span class="std std-ref">Paths and Bookmarks</span></a></p></li>
+<li><p><a class="reference internal" href="#cb-objects"><span class="std std-ref">Objects and Collections</span></a></p></li>
+<li><p><a class="reference internal" href="#cb-members"><span class="std std-ref">Properties and Methods</span></a></p></li>
+<li><p><a class="reference internal" href="#cb-filters"><span class="std std-ref">Search and Display Filters</span></a></p></li>
+<li><p><a class="reference internal" href="#cb-pins"><span class="std std-ref">Pins</span></a></p></li>
+</ol>
+</section>
+<section id="opening-context-browser">
+<span id="cb-open"></span><h2>Opening Context Browser<a class="headerlink" href="#opening-context-browser" title="Link to this heading">¶</a></h2>
+<p>Use the CB button in an area’s header to open that area’s context. From <strong>F3 → Context Browser</strong> or the <strong>Blender menu → Context Browser…</strong> in the top-left corner, use the picker to choose the area and region you want to inspect. Check the highlight and click to open CB. Press Esc or right-click to cancel.</p>
+<p>For example, choosing a 3D Viewport lets you explore its active object and view settings. Other areas, such as the Outliner, provide different context information.</p>
+<p>You can also configure a shortcut in the add-on’s Preferences.</p>
+</section>
+<section id="paths-and-bookmarks">
+<span id="cb-navigation"></span><h2>Paths and Bookmarks<a class="headerlink" href="#paths-and-bookmarks" title="Link to this heading">¶</a></h2>
+<figure class="pme-overview pme-overview--editor" style="--editor-width:1622px">
+<div class="pme-overview__crop" style="--crop-ratio:1622 / 64;--crop-offset:-11.27572016%">
+<img src="../_static/images/editors/overview/context-browser.png" width="1622" height="1215" alt="The top menu, the C and area path segments, and the Copy Path button.">
+</div>
+</figure><p>The current path appears at the top. <strong>C → area</strong> in the screenshot represents <code class="docutils literal notranslate"><span class="pre">C.area</span></code>: the area where CB was opened. Click a path segment to return to that level.</p>
+<p><strong>C</strong> stands for <code class="docutils literal notranslate"><span class="pre">bpy.context</span></code>, and <strong>D</strong> for <code class="docutils literal notranslate"><span class="pre">bpy.data</span></code>. Use the ▼ menu on the left to switch between <strong>Context</strong> and <strong>Data</strong>. The copy button on the right copies the current path.</p>
+<p><strong>Add Bookmark</strong> saves the current location. Return to it from the same ▼ menu. To keep an individual property at the bottom of the browser, use <a class="reference internal" href="#cb-pins"><span class="std std-ref">Pins</span></a>.</p>
+</section>
+<section id="objects-and-collections">
+<span id="cb-objects"></span><h2>Objects and Collections<a class="headerlink" href="#objects-and-collections" title="Link to this heading">¶</a></h2>
+<p>Use the list on the left to explore objects and collections belonging to the current target. <code class="docutils literal notranslate"><span class="pre">[..]</span></code> takes you up one level.</p>
+<p>The screenshot shows <code class="docutils literal notranslate"><span class="pre">regions</span></code> and <code class="docutils literal notranslate"><span class="pre">spaces</span></code> under <code class="docutils literal notranslate"><span class="pre">C.area</span></code>. Open <code class="docutils literal notranslate"><span class="pre">regions</span></code> to inspect the regions that make up that area. Adjust <strong>Width</strong> below the list to change the proportion of space given to the left and right lists.</p>
+</section>
+<section id="properties-and-methods">
+<span id="cb-members"></span><h2>Properties and Methods<a class="headerlink" href="#properties-and-methods" title="Link to this heading">¶</a></h2>
+<figure class="pme-overview pme-overview--editor" style="--editor-width:1622px">
+<div class="pme-overview__crop" style="--crop-ratio:1622 / 521;--crop-offset:-17.36625514%">
+<img src="../_static/images/editors/overview/context-browser.png" width="1622" height="1215" alt="Properties including Height, Show Menus, and Editor Type, followed by the functions header_text_set(text) and tag_redraw().">
+</div>
+</figure><p><strong>Properties</strong> on the right shows the values. Editable properties have checkboxes, input fields, or other controls. Use <strong>Edit…</strong> for arrays and similar values. Read-only values, such as Height and Width in the screenshot, can be inspected but not changed.</p>
+<p><strong>Functions</strong> shows method names and arguments. Methods known to take no arguments appear as <code class="docutils literal notranslate"><span class="pre">tag_redraw()</span></code>. When argument information is unavailable, CB shows <code class="docutils literal notranslate"><span class="pre">(...)</span></code>. Displaying the list does not call the methods.</p>
+<p>Each row has a Pin button on the left, a type icon next to it, and <strong>Target Actions</strong> on the right.</p>
+<section id="target-actions">
+<span id="cb-target-actions"></span><h3>Target Actions<a class="headerlink" href="#target-actions" title="Link to this heading">¶</a></h3>
+<p>Use the button on the right of a row to choose what to do with its path or value. Available actions depend on the target and whether a compatible PME is enabled.</p>
+<dl class="simple myst">
+<dt>Copy Path</dt><dd><p>Copy the property’s Python path, such as <code class="docutils literal notranslate"><span class="pre">C.object.display_type</span></code>.</p>
+</dd>
+<dt>Copy Value</dt><dd><p>Copy the current value as a Python value. For enums, this copies an identifier such as <code class="docutils literal notranslate"><span class="pre">'WIRE'</span></code>, rather than the label shown in the interface.</p>
+</dd>
+<dt>Copy Enum Identifiers</dt><dd><p>Copy the list of identifiers declared for an enum. To copy only the currently selected value, use <strong>Copy Value</strong>.</p>
+</dd>
+<dt>Copy Method Path</dt><dd><p>Copy the path to a method, such as <code class="docutils literal notranslate"><span class="pre">C.area.tag_redraw</span></code>.</p>
+</dd>
+<dt>Copy Call Template</dt><dd><p>Copy a call template with arguments, such as <code class="docutils literal notranslate"><span class="pre">C.area.tag_redraw()</span></code>. This does not call the method. If the template contains arguments, adjust them before running it.</p>
+</dd>
+<dt>Open API Reference</dt><dd><p>Open Blender’s official API documentation. If CB cannot identify a specific documentation entry, it opens a search in the official documentation.</p>
+</dd>
+<dt>Capture in PME…</dt><dd><p>Send the property to PME’s Capture Menu. Choose where to add it to create a menu item. Available when a compatible PME is enabled.</p>
+</dd>
+</dl>
+<p>If the target disappears or changes before a copy or capture action, check the error and reopen CB.</p>
+</section>
+</section>
+<section id="search-and-display-filters">
+<span id="cb-filters"></span><h2>Search and Display Filters<a class="headerlink" href="#search-and-display-filters" title="Link to this heading">¶</a></h2>
+<figure class="pme-overview pme-overview--editor" style="--editor-width:1622px">
+<div class="pme-overview__crop" style="--crop-ratio:1622 / 107;--crop-offset:-62.30452675%">
+<img src="../_static/images/editors/overview/context-browser.png" width="1622" height="1215" alt="Search fields for both lists, Width on the left, and property name display and type filters on the right.">
+</div>
+</figure><p>Each search field filters its own list. You can search for properties by either their display names or their identifiers.</p>
+<p><strong>Show Property Identifiers</strong> at the bottom right switches property names between UI labels and Python identifiers. In the screenshot, <strong>Height</strong> corresponds to <code class="docutils literal notranslate"><span class="pre">height</span></code>, and <strong>Show Menus</strong> to <code class="docutils literal notranslate"><span class="pre">show_menus</span></code>.</p>
+<p>The adjacent type filters control the display of booleans, integers, floating-point numbers, strings, enums, and arrays. If you cannot find a member, check the search text and type filters.</p>
+</section>
+<section id="pins">
+<span id="cb-pins"></span><h2>Pins<a class="headerlink" href="#pins" title="Link to this heading">¶</a></h2>
+<figure class="pme-overview pme-overview--editor" style="--editor-width:1622px">
+<div class="pme-overview__crop" style="--crop-ratio:1622 / 232;--crop-offset:-71.68724280%">
+<img src="../_static/images/editors/overview/context-browser.png" width="1622" height="1215" alt="Pinned object color and vertex size, with Copy All Paths, Copy Snapshot, and Remove All Pins below.">
+</div>
+</figure><p>Click the Pin button on the left of a row to add the target to the bottom list. Click it again to unpin. The list is hidden when there are no Pins.</p>
+<p>Properties can be inspected and edited just like in the regular list. Methods show their names and arguments. Each row also provides Target Actions.</p>
+<p>A Pin keeps a path. For example, <code class="docutils literal notranslate"><span class="pre">C.active_object.color</span></code> refers to whichever object is active at the time; it does not keep the object that was active when you pinned it. If the path cannot be resolved, such as when there is no active object, the row shows the problem.</p>
+<p><strong>Copy All Paths</strong> copies all pinned paths together. <strong>Copy Snapshot</strong> copies the paths and their current values or other details, for use in investigation notes or a question to an AI assistant. The trash button on the right removes all Pins.</p>
+<p>The add-on’s Preferences also has a <strong>Pinned Paths</strong> list, where you can review, copy, or remove saved paths.</p>
+</section>
+<section id="console-area-picker">
+<span id="cb-console-picker"></span><h2>Console Area Picker<a class="headerlink" href="#console-area-picker" title="Link to this heading">¶</a></h2>
+<p>The <strong>Area Picker</strong> button with the eyedropper icon in the Python Console header wraps your current input in a statement that runs it in the chosen editor.</p>
+<ol class="arabic simple">
+<li><p>Type code into the Console without running it yet.</p></li>
+<li><p>Click <strong>Area Picker</strong>, then click the target area.</p></li>
+<li><p>Review the input with its added <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">C.temp_override(...):</span></code> statement, then run it.</p></li>
+</ol>
+<p>For example, enter the command that frames the selection in a 3D View:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">view3d</span><span class="o">.</span><span class="n">view_selected</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Choose a 3D View to produce <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">C.temp_override(...):</span> <span class="pre">bpy.ops.view3d.view_selected()</span></code>, with the chosen area and its WINDOW region specified. The picker inserts code; it does not run it automatically.</p>
+<p>The adjacent copy icon copies the chosen area’s path to the clipboard. Area indices can change when you split or join areas, so pick again after changing the layout.</p>
+<p>Choosing an execution area does not change the mode or selection. For example, growing a mesh selection in Edit Mode uses <code class="docutils literal notranslate"><span class="pre">bpy.ops.mesh.select_more()</span></code>, while extending an object selection through parent/child relationships in Object Mode uses <code class="docutils literal notranslate"><span class="pre">bpy.ops.object.select_more()</span></code>. An operator still needs the appropriate state, even when its execution area has been specified.</p>
+<p>To do the same thing in a PME code field, use <a class="reference internal" href="../reference/command_text.html#override-context"><span class="std std-ref">override_context()</span></a>.</p>
+</section>
+<section id="display-settings">
+<span id="cb-settings"></span><h2>Display Settings<a class="headerlink" href="#display-settings" title="Link to this heading">¶</a></h2>
+<p>Open <strong>Settings…</strong> at the bottom of CB’s top-left ▼ menu, or use the add-on’s Preferences.</p>
+<dl class="simple myst">
+<dt>Show Header Button</dt><dd><p>Show a button for opening CB in each area’s header.</p>
+</dd>
+<dt>Show Console Area Picker</dt><dd><p>Show the Area Picker and Copy Path buttons in the Python Console header.</p>
+</dd>
+<dt>Width</dt><dd><p>Set the CB popup width. The change takes effect the next time you open CB.</p>
+</dd>
+<dt>Number of Rows</dt><dd><p>Set the number of rows shown in the object and property lists.</p>
+</dd>
+</dl>
+</section>
+<section id="related-pages">
+<h2>Related Pages<a class="headerlink" href="#related-pages" title="Link to this heading">¶</a></h2>
+<div class="seealso admonition">
+<p class="admonition-title">Related Pages</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="context_menu.html"><span class="doc">Capture Menu</span></a> — PME’s Capture Menu</p></li>
+<li><p><a class="reference internal" href="property_stack_editor.html"><span class="doc">Property Stack Editor</span></a> — Build actions for properties</p></li>
+<li><p><a class="reference internal" href="context_router_editor.html"><span class="doc">Context Router Editor</span></a> — Choose what to invoke based on the current context</p></li>
+<li><p><a class="reference internal" href="../reference/command_text.html"><span class="doc">Writing and Running Code</span></a> — Edit commands</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../reference/keymap_guide.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Choosing a Keymap</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../reference/scripting.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Scripting</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Pluglug and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Context Browser</a><ul>
+<li><a class="reference internal" href="#interface-overview">Interface Overview</a></li>
+<li><a class="reference internal" href="#opening-context-browser">Opening Context Browser</a></li>
+<li><a class="reference internal" href="#paths-and-bookmarks">Paths and Bookmarks</a></li>
+<li><a class="reference internal" href="#objects-and-collections">Objects and Collections</a></li>
+<li><a class="reference internal" href="#properties-and-methods">Properties and Methods</a><ul>
+<li><a class="reference internal" href="#target-actions">Target Actions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#search-and-display-filters">Search and Display Filters</a></li>
+<li><a class="reference internal" href="#pins">Pins</a></li>
+<li><a class="reference internal" href="#console-area-picker">Console Area Picker</a></li>
+<li><a class="reference internal" href="#display-settings">Display Settings</a></li>
+<li><a class="reference internal" href="#related-pages">Related Pages</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=c4a36953"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>
