@@ -1,0 +1,1125 @@
+<!doctype html>
+<html class="no-js" lang="ja" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="索引" href="../../genindex.html"><link rel="search" title="検索" href="../../search.html"><link rel="next" title="メニュー" href="menus.html"><link rel="prev" title="基本事項" href="concepts.html">
+        <link rel="canonical" href="https://docs.pie-menu-editor.com/ja/reference/authoring/results.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
+        <title>結果とガード - Pie Menu Editor 2.4 ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=6b3a701d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/editor-overview.css?v=8fac9edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/hotkey-modes.css?v=682cae44" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0d82d0;
+  --color-brand-content: #0d82d0;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    (function () {
+        if (window.__PMEBeaconInitialized) {
+            return;
+        }
+
+        window.__PMEBeaconInitialized = true;
+
+        !function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+        window.Beacon('init', 'e458ab6a-6436-4e96-a0b6-038336504b24');
+        window.Beacon('config', {
+            display: {
+                style: 'manual'
+            }
+        });
+
+        window.PMEDocs = window.PMEDocs || {};
+        window.PMEDocs.beaconPrefillTemplates = {
+            supportRequest: [
+                'Summary:',
+                '- What went wrong?',
+                '',
+                'Steps to reproduce:',
+                '1.',
+                '2.',
+                '3.',
+                '',
+                'What happened:',
+                '- Describe the actual result.',
+                '',
+                'Environment:',
+                '- Blender version:',
+                '- PME version:',
+                '- OS:',
+                '',
+                'Attachments:',
+                '- PME setup JSON:',
+                '- Console output / screenshot:',
+                '- Small .blend file (if relevant):',
+                '',
+                'Additional notes:',
+                '- Anything else that may help.'
+            ].join('\n')
+        };
+
+        window.PMEDocs.openSupportBeacon = function (event, templateName) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            if (typeof window.Beacon === 'function') {
+                const prefillText = window.PMEDocs.beaconPrefillTemplates[templateName];
+                if (prefillText) {
+                    window.Beacon('prefill', {
+                        text: prefillText
+                    });
+                }
+
+                window.Beacon('open');
+                window.Beacon('navigate', '/ask/message/');
+                return false;
+            }
+
+            return true;
+        };
+
+        document.addEventListener('click', function (event) {
+            const trigger = event.target.closest('[data-beacon-open]');
+            if (!trigger) {
+                return;
+            }
+
+            window.PMEDocs.openSupportBeacon(event, trigger.dataset.beaconTemplate);
+        });
+    }());
+</script></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Pie Menu Editor 2.4 ドキュメント</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">Pie Menu Editor 2.4 ドキュメント</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="検索" name="q" aria-label="検索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">はじめる</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/basic_pie_menu.html">基本的なパイメニューの作成</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">使用例とアイデア</a><input aria-label="Toggle navigation of 使用例とアイデア" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting_workflow.html">コード例</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">エディタ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/editor_common_elements.html">エディターの共通要素</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hotkey_modes.html">Hotkey Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/pie_menu_editor.html">Pie Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/vector_menu_editor.html">Vector Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/regular_menu_editor.html">Regular Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/popup_dialog_editor.html">Pop-up Dialog Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/floating_panel_editor.html">Floating Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/sticky_key_editor.html">Sticky Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/stack_key_editor.html">Stack Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/macro_operator_editor.html">Macro Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/modal_operator_editor.html">Modal Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/property_editor.html">Property Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/property_stack_editor.html">Property Stack Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_router_editor.html">Context Router Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/side_panel_editor.html">Side Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/hiding_unused_panels.html">Hiding Unused Panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/interactive_panels.html">Interactive Panels と Extend Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/ui_customization.html">UI Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_menu.html">キャプチャーメニュー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/custom_icons.html">カスタムアイコン</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/settings.html">Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">スクリプティング</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../command_text.html">コードの入力と実行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting.html">スクリプティングリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../script_management.html">スクリプトの管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundled_utilities.html">同梱ユーティリティー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_browser.html">Context Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">オーサリング API</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">概要</a><input aria-label="Toggle navigation of 概要" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">基本事項</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">結果とガード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">メニュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slots.html">スロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout.html">レイアウトの行とパネル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">メニューの種類ごとの設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hotkeys.html">ホットキー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property.html">Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property_stack.html">Property Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="router.html">Context Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export_validate.html">書き出しと検証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">リソース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html">コード実行・ユーザープロパティ・identity</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="recipes/index.html">レシピ</a><input aria-label="Toggle navigation of レシピ" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="recipes/layout_build_panel_rows.html">パネルを1行ずつ組み立てる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/property_stack_new.html">Property Stack を作成して状態を表示する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/property_switch.html">設定を Property のスイッチにする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/router_add_branch.html">Router の分岐を追加して条件を編集する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/slots_link_child_menu.html">子メニューへリンクし、アイコンのフラグを保つ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">参考資料</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keymap_guide.html">キーマップの選び方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keymap_duplicates.html">キーマップの重複</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../poll_method.html">Poll Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">用語集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file_locations.html">保存先とフォルダ構成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boot_options.html">起動オプション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_options.html">開発者オプション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../original_author_videos.html">ビデオチュートリアル</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">サポート</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/faq.html#known-issues">既知の問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/get_support.html">サポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/changelog.html">Change Log</a></li>
+</ul>
+
+</div>
+</div>
+<nav class="documentation-languages" aria-label="言語">
+  
+  <a href="../../../reference/authoring/results.html" lang="en" hreflang="en" aria-label="English" title="English"><span aria-hidden="true">🇺🇸</span></a>
+  
+  <a href="results.html" lang="ja" hreflang="ja" aria-label="日本語" title="日本語" aria-current="true"><span aria-hidden="true">🇯🇵</span></a>
+  
+</nav>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.documentation-languages a')];
+  const targets = links.map(link => link.getAttribute('href'));
+  function syncFragment() {
+    links.forEach((link, index) => { link.href = targets[index] + window.location.hash; });
+  }
+  syncFragment();
+  window.addEventListener('hashchange', syncFragment);
+})();
+</script>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/reference/authoring/results.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="authoring-results">
+<span id="id1"></span><h1>結果とガード<a class="headerlink" href="#authoring-results" title="Link to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">pme.editing</span></code> のすべての編集関数は <code class="docutils literal notranslate"><span class="pre">dict</span></code> を返します。
+このページは、それらの結果に共通する要素を定義します。
+<code class="docutils literal notranslate"><span class="pre">status</span></code> の値、古い入力を拒否するガード、<code class="docutils literal notranslate"><span class="pre">dry_run</span></code>、診断の項目、例外です。
+1 つの関数だけが持つキーは、その関数の説明に記載します。</p>
+<p>成功、事前確認、古い入力を表す値の名前は、操作ごとに決まっています。
+<a class="reference internal" href="#authoring-results-by-operation"><span class="std std-ref">操作ごとの結果とガードの語彙</span></a> に一覧があります。
+呼び出し側は、1 つの綴りを仮定せず、そこに挙げた値で判定します。</p>
+<section id="id2">
+<h2>共通の結果キー<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+<col style="width: 64.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>キー</p></th>
+<th class="head"><p>型</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p>str</p></td>
+<td><p><a class="reference internal" href="#authoring-results-status"><span class="std std-ref">ステータスの値</span></a> のいずれかの値。
+すべての結果にあります。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">status</span></code> が <code class="docutils literal notranslate"><span class="pre">&quot;committed&quot;</span></code> のときだけ <code class="docutils literal notranslate"><span class="pre">True</span></code>。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dry_run</span></code></p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dry_run</span></code> 引数の値。
+スロット、レイアウト、移送の結果にはこのキーがありません。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pm_uid</span></code></p></td>
+<td><p>str</p></td>
+<td><p>メニュー UID。1 つのメニューに対する大半の操作の結果にあります。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">before</span></code>, <code class="docutils literal notranslate"><span class="pre">after</span></code></p></td>
+<td><p>dict または None</p></td>
+<td><p>呼び出しの前と後に読んだ保存値。
+形と有無は各関数の説明に記載します。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code></p></td>
+<td><p>dict</p></td>
+<td><p>後の呼び出しに <code class="docutils literal notranslate"><span class="pre">expected</span></code> として渡す値。
+ガードがスナップショットである操作にあります(<a class="reference internal" href="#authoring-results-guards"><span class="std std-ref">ガード</span></a>)。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pending</span></code></p></td>
+<td><p>list</p></td>
+<td><p>保存を試みていない部分(スロット UID、メタデータのフィールド名、Property のグループ)。
+エディターのコールバックなど、先の段階がそれらを変更している場合があります。
+pending は未変更を意味しません。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">recovery</span></code></p></td>
+<td><p>dict、str または None</p></td>
+<td><p>書き込み失敗後の復元の詳細。
+形は各関数の説明に記載します。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code></p></td>
+<td><p>list[dict]</p></td>
+<td><p><a class="reference internal" href="#authoring-results-diagnostics"><span class="std std-ref">診断</span></a> で説明する項目。
+すべての結果にあります。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="menus.html#pme.create_pm" title="pme.create_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">pme.create_pm()</span></code></a> は dict ではなく <code class="docutils literal notranslate"><span class="pre">PmCreationResult</span></code> オブジェクトを返します。
+属性は <code class="docutils literal notranslate"><span class="pre">accepted</span></code> (bool)、<code class="docutils literal notranslate"><span class="pre">pm_uid</span></code> (str。拒否時は空)、
+<code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> (コード文字列の tuple)です。
+<code class="docutils literal notranslate"><span class="pre">accepted</span></code> が <code class="docutils literal notranslate"><span class="pre">True</span></code> で <code class="docutils literal notranslate"><span class="pre">refresh_failed</span></code> がある場合、
+メニューは作成済みで、表示の更新だけが失敗しています。</p>
+<p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a> と <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> は、スロットごとの <code class="docutils literal notranslate"><span class="pre">slots</span></code>、
+<code class="docutils literal notranslate"><span class="pre">side_effects</span></code>、<code class="docutils literal notranslate"><span class="pre">structure_changes</span></code> も返します。説明は <a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a> にあります。</p>
+</section>
+<section id="authoring-results-status">
+<span id="id3"></span><h2>ステータスの値<a class="headerlink" href="#authoring-results-status" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 78.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></th>
+<th class="head"><p>意味</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>確定(メモリ内に保存済み)。
+要求した変更は、エディターの通常の正規化を経て読み戻したとおり、メモリ内に保存されています。
+<a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a> では、
+要求した部分のうち少なくとも 1 つが保存され、拒否された部分がない状態です。
+個々の部分は <code class="docutils literal notranslate"><span class="pre">unchanged</span></code> の場合があります。
+すべての部分がすでに要求どおりの値なら、結果は <code class="docutils literal notranslate"><span class="pre">unchanged</span></code> です。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">partial</span></code></p></td>
+<td><p>一部だけ保存。要求の一部を保存した後、後続の部分が拒否されたか失敗しました。
+試みていない部分は <code class="docutils literal notranslate"><span class="pre">pending</span></code> にあります。
+<a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>、
+<a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a>、<a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a> だけが返します。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p>dry run の受理。<code class="docutils literal notranslate"><span class="pre">dry_run=True</span></code> で、要求がすべての検査を通過しました。
+何も書き込んでいません。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ready</span></code></p></td>
+<td><p>実行可能と確認済み。<code class="docutils literal notranslate"><span class="pre">validated</span></code> と同じ意味で、
+<a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a> と <a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a> が返します。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p>変更なし(書き込まない)。要求は保存値とすでに一致しています。何も書き込んでいません。
+Router と Property Stack の dry run は、代わりに <code class="docutils literal notranslate"><span class="pre">validated</span></code> を返します。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p>拒否。要求した変更は保存されていません。<code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> が原因を示します。
+エディターのコールバックを実行したスロット操作では、コールバックによる変更が残る場合があり、
+<code class="docutils literal notranslate"><span class="pre">after</span></code> と <code class="docutils literal notranslate"><span class="pre">side_effects</span></code> に示されます。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">restored_failure</span></code></p></td>
+<td><p>失敗後に復元済み。書き込みが失敗しました。保存値を書き戻し、
+読み戻しが呼び出し前の値と一致しています。Blender の登録は別に観測します。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p>状態不明(読み直す)。書き込みが失敗し、保存状態を確認できませんでした。
+再試行の前に対象を読み直します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>結果の中の項目は、それぞれ独自の <code class="docutils literal notranslate"><span class="pre">status</span></code> を持ちます：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slots</span></code> の項目(スロット操作)と <code class="docutils literal notranslate"><span class="pre">fields</span></code> の項目(<a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a>)：
+<code class="docutils literal notranslate"><span class="pre">committed</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">groups</span></code> の項目(<a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>)：<code class="docutils literal notranslate"><span class="pre">committed</span></code>、
+<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">registration</span></code> (<a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a>)：
+<code class="docutils literal notranslate"><span class="pre">registered</span></code>、<code class="docutils literal notranslate"><span class="pre">not_required</span></code>、<code class="docutils literal notranslate"><span class="pre">partial</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">visibility</span></code> (<a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a>)：<code class="docutils literal notranslate"><span class="pre">observed</span></code> または <code class="docutils literal notranslate"><span class="pre">unknown</span></code>。</p></li>
+</ul>
+<p>登録と可視性は Blender の現在の状態の観測であり、操作の結果ではありません。</p>
+<section id="id4">
+<h3>確定ステータスが示す範囲<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>メモリ内の保存定義。Preferences はディスクに保存されません(<a class="reference internal" href="concepts.html#authoring-concepts"><span class="std std-ref">基本事項</span></a>)。</p></li>
+<li><p>表示や動作は含みません。読み戻しで確認できるのは保存定義です。
+表示と動作は、メニューが対象とするエディターとモードで別に観測します。
+たとえば、Knife ツールを有効にする Command スロットが確定した場合、
+そのスロットを実行するとアクティブツールが変わります。それだけで形状を切断するわけではありません。</p></li>
+<li><p>問題がないことは示しません。<code class="docutils literal notranslate"><span class="pre">committed</span></code> に診断が付く場合があります。
+正規化の注記、警告、確認が必要な保存定義などです。</p></li>
+<li><p>保存後の refresh が失敗しても、確定は取り消されません。
+失敗は <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> または例外の注記で報告します。</p></li>
+</ul>
+</section>
+</section>
+<section id="authoring-results-guards">
+<span id="id5"></span><h2>ガード<a class="headerlink" href="#authoring-results-guards" title="Link to this heading">¶</a></h2>
+<p>ガードは、何かを書き込む前に、呼び出し側が持つ保存状態の写しと現在の状態を比較します。
+一致しない場合は、<code class="docutils literal notranslate"><span class="pre">status</span></code> <code class="docutils literal notranslate"><span class="pre">&quot;rejected&quot;</span></code> と、その操作の stale 診断を返します。
+stale 診断は <a class="reference internal" href="#authoring-results-by-operation"><span class="std std-ref">操作ごとの結果とガードの語彙</span></a> に一覧があります。</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>入力</p></th>
+<th class="head"><p>比較するもの</p></th>
+<th class="head"><p>値の取得元</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code></p></td>
+<td><p>メニューのセッション内のバージョン(int)。
+stale のコードは <code class="docutils literal notranslate"><span class="pre">stale_version</span></code> で、<code class="docutils literal notranslate"><span class="pre">expected</span></code> と <code class="docutils literal notranslate"><span class="pre">actual</span></code> を持ちます。</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;version&quot;]</span></code>、または以前のスロット操作やレイアウト操作の結果の
+<code class="docutils literal notranslate"><span class="pre">version</span></code>。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code></p></td>
+<td><p>保存値。下の 3 つの形式のいずれか。</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()</span></code>、または以前の結果の <code class="docutils literal notranslate"><span class="pre">expected</span></code>。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code></p></td>
+<td><p>Router、Property Stack、Property の保存データのハッシュ(str)。</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;router&quot;][&quot;digest&quot;]</span></code>、
+<code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property_stack&quot;][&quot;digest&quot;]</span></code>、
+または <code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property&quot;][&quot;digest&quot;]</span></code>。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code> と <code class="docutils literal notranslate"><span class="pre">expected</span></code> は互いに独立しています。
+<code class="docutils literal notranslate"><span class="pre">version</span></code> は、Python からの直接の書き込みをすべて検出するものではありません。
+<code class="docutils literal notranslate"><span class="pre">expected</span></code> は保存値を比較するため、それらも検出します。</p>
+<p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code> を受け付けるのは、<a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>、
+<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a>、
+<a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a> と、行・spacer・panel の操作です。
+<a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a> は受け付けません。</p>
+<section id="expected">
+<h3><code class="docutils literal notranslate"><span class="pre">expected</span></code> の形式<a class="headerlink" href="#expected" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 38.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>形式</p></th>
+<th class="head"><p>操作</p></th>
+<th class="head"><p>規則</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>保存値の一部</p></td>
+<td><p><a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a> (メタデータ)、<a class="reference internal" href="settings.html#pme.editing.update_settings" title="pme.editing.update_settings"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_settings()</span></code></a> (設定)、
+<a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a> と <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> (スロット UID からスロットのフィールドへの対応)、
+Pop-up Dialog と Floating Panel 以外のメニューでの <a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a>
+(そのスロットのフィールド)</p></td>
+<td><p>その部分について <code class="docutils literal notranslate"><span class="pre">read_pm()</span></code> が返すキーの任意の部分集合。
+値が異なるキーがあると、呼び出しを拒否します。
+保存値にないキーも stale として扱います。
+ただし <a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a> は、未知のフィールドに対して <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> を送出します。
+<a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a> と <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> は、
+編集対象でないスロット UID に対して <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> を送出します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>保存値の全体</p></td>
+<td><p><a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a> (<code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;hotkey&quot;]</span></code> の 13 フィールドちょうど)、
+<a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a> (要求したすべての UID から保存済みの bool への対応)</p></td>
+<td><p>キーの不足や余分は <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> を送出します。</p></td>
+</tr>
+<tr class="row-even"><td><p>以前の呼び出しのスナップショット</p></td>
+<td><p><a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a>。
+Pop-up Dialog または Floating Panel での <a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>、
+<a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a> と、行・spacer・panel の操作。
+<a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.duplicate_pm" title="pme.editing.duplicate_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">duplicate_pm()</span></code></a>、
+<a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a></p></td>
+<td><p>以前の呼び出し(通常は dry run)が返した <code class="docutils literal notranslate"><span class="pre">result[&quot;expected&quot;]</span></code> を、変更せずに渡します。
+違いがあれば呼び出しを拒否します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a> と <a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a> は、Pop-up Dialog と Floating Panel 以外のメニューで
+<code class="docutils literal notranslate"><span class="pre">expected</span></code> を渡すと <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> を送出します。</p>
+</section>
+</section>
+<section id="dry-run">
+<span id="authoring-results-dry-run"></span><h2><code class="docutils literal notranslate"><span class="pre">dry_run</span></code><a class="headerlink" href="#dry-run" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dry_run=True</span></code> は、実際の呼び出しと同じ検査を現在の保存値に対して実行し、何も書き込みません。
+保存値、バージョン、UID は元のままです。エディターの hook と refresh は実行しません。</p></li>
+<li><p>受理された dry run は <code class="docutils literal notranslate"><span class="pre">validated</span></code> (<a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a> と <a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a> では <code class="docutils literal notranslate"><span class="pre">ready</span></code>)を返します。
+<a class="reference internal" href="#authoring-results-by-operation"><span class="std std-ref">操作ごとの結果とガードの語彙</span></a> に記載がある操作では、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code> を返す場合もあります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">before</span></code> と <code class="docutils literal notranslate"><span class="pre">after</span></code> がある場合、それらは予測ではなく保存値を示します。
+予測値を返す場合、それは <code class="docutils literal notranslate"><span class="pre">proposed</span></code> (<a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a>)、
+または <code class="docutils literal notranslate"><span class="pre">candidate</span></code> (<a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>、Router と Property Stack の操作)です。</p></li>
+<li><p>dry run の <code class="docutils literal notranslate"><span class="pre">expected</span></code> は、適用する呼び出しに渡せます。</p></li>
+<li><p>適用する呼び出しは UID を解決し直し、すべての検査を繰り返します。
+<code class="docutils literal notranslate"><span class="pre">validated</span></code> は成功を予約せず、エディターの hook、refresh、Blender の登録も検査しません。</p></li>
+<li><p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a> には
+<code class="docutils literal notranslate"><span class="pre">dry_run</span></code> がありません。</p></li>
+</ul>
+</section>
+<section id="authoring-results-by-operation">
+<span id="id6"></span><h2>操作ごとの結果とガードの語彙<a class="headerlink" href="#authoring-results-by-operation" title="Link to this heading">¶</a></h2>
+<p><em>その他のステータス</em> は、確定と dry run の値以外の値を挙げます。
+<em>ガードの入力</em> は、ガードの引数と stale 診断のコードを示します。</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 11.0%" />
+<col style="width: 14.0%" />
+<col style="width: 21.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>操作</p></th>
+<th class="head"><p>確定</p></th>
+<th class="head"><p>dry run の受理</p></th>
+<th class="head"><p>その他のステータス</p></th>
+<th class="head"><p>ガードの入力</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.create_pm" title="pme.create_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">pme.create_pm()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">accepted</span></code> が <code class="docutils literal notranslate"><span class="pre">True</span></code> (dict ではなくオブジェクト)</p></td>
+<td><p>なし</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">accepted</span></code> が <code class="docutils literal notranslate"><span class="pre">False</span></code> で <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> あり</p></td>
+<td><p>なし</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dry_run</span></code> なし</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">partial</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>、<code class="docutils literal notranslate"><span class="pre">expected</span></code> (スロット UID からスロットのフィールドの一部への対応)。
+<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>、<code class="docutils literal notranslate"><span class="pre">stale_slot</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dry_run</span></code> なし</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">partial</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (メタデータの一部)。<code class="docutils literal notranslate"><span class="pre">stale_metadata</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="settings.html#pme.editing.update_settings" title="pme.editing.update_settings"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_settings()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (設定の一部)。<code class="docutils literal notranslate"><span class="pre">stale_settings</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ready</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (ホットキーの 13 フィールドすべて)。<code class="docutils literal notranslate"><span class="pre">stale_hotkey</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (UID から保存済みの bool への対応、全対象)。
+<code class="docutils literal notranslate"><span class="pre">pm_availability_expected_mismatch</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>。空の要求では <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット)。<code class="docutils literal notranslate"><span class="pre">tag_expected_stale</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="menus.html#pme.editing.duplicate_pm" title="pme.editing.duplicate_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">duplicate_pm()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット)。<code class="docutils literal notranslate"><span class="pre">pm_duplicate_stale_expected</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ready</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット)。<code class="docutils literal notranslate"><span class="pre">pm_remove_saved_state_stale</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="menus.html#pme.editing.read_pm" title="pme.editing.read_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_pm()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.read_slot_inputs" title="pme.editing.read_slot_inputs"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_slot_inputs()</span></code></a>、
+<a class="reference internal" href="slots.html#pme.editing.slot_fields" title="pme.editing.slot_fields"><code class="xref py py-func docutils literal notranslate"><span class="pre">slot_fields()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.resolve_auto_icons" title="pme.editing.resolve_auto_icons"><code class="xref py py-func docutils literal notranslate"><span class="pre">resolve_auto_icons()</span></code></a>、
+<a class="reference internal" href="settings.html#pme.editing.setting_fields" title="pme.editing.setting_fields"><code class="xref py py-func docutils literal notranslate"><span class="pre">setting_fields()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.find_references" title="pme.editing.find_references"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_references()</span></code></a></p></td>
+<td><p>読み取り専用。<code class="docutils literal notranslate"><span class="pre">status</span></code> はなく、何も書き込みません</p></td>
+<td><p>なし</p></td>
+<td><p>なし</p></td>
+<td><p>なし</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>。Pop-up Dialog または Floating Panel では
+<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code> も</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>、<code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット)。<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>、
+<code class="docutils literal notranslate"><span class="pre">stale_snapshot</span></code>、<code class="docutils literal notranslate"><span class="pre">stale_popup</span></code> (Pop-up)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>。Pop-up Dialog または Floating Panel では
+<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code> も</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>、<code class="docutils literal notranslate"><span class="pre">expected</span></code> (そのスロットのフィールド。Pop-up ではスナップショット)。
+<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>、<code class="docutils literal notranslate"><span class="pre">stale_slot</span></code>、<code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>。Pop-up Dialog または Floating Panel では
+<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code> も</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>、<code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット。Pop-up のみ)。
+<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>、<code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット)。<code class="docutils literal notranslate"><span class="pre">expected_version</span></code> なし。<code class="docutils literal notranslate"><span class="pre">stale_transfer</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="layout.html#pme.editing.add_row" title="pme.editing.add_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_row()</span></code></a>、<a class="reference internal" href="layout.html#pme.editing.add_panel" title="pme.editing.add_panel"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_panel()</span></code></a>、<a class="reference internal" href="layout.html#pme.editing.remove_row" title="pme.editing.remove_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_row()</span></code></a>、
+<a class="reference internal" href="layout.html#pme.editing.split_row" title="pme.editing.split_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">split_row()</span></code></a>、<a class="reference internal" href="layout.html#pme.editing.join_rows" title="pme.editing.join_rows"><code class="xref py py-func docutils literal notranslate"><span class="pre">join_rows()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>、<code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット)。<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>、
+<code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="layout.html#pme.editing.move_row" title="pme.editing.move_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_row()</span></code></a>、<a class="reference internal" href="layout.html#pme.editing.update_row" title="pme.editing.update_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_row()</span></code></a>、<a class="reference internal" href="layout.html#pme.editing.update_spacer" title="pme.editing.update_spacer"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_spacer()</span></code></a>、
+<a class="reference internal" href="layout.html#pme.editing.align_slot" title="pme.editing.align_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">align_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>、<code class="docutils literal notranslate"><span class="pre">expected</span></code> (スナップショット)。<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>、
+<code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">partial</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、
+<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>。<code class="docutils literal notranslate"><span class="pre">stale_property</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="router.html#pme.editing.remove_router_branch" title="pme.editing.remove_router_branch"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_router_branch()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>。<code class="docutils literal notranslate"><span class="pre">stale_router_digest</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="router.html#pme.editing.update_router" title="pme.editing.update_router"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_router()</span></code></a>、<a class="reference internal" href="router.html#pme.editing.move_router_branch" title="pme.editing.move_router_branch"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_router_branch()</span></code></a>、
+<a class="reference internal" href="router.html#pme.editing.reorder_router_branches" title="pme.editing.reorder_router_branches"><code class="xref py py-func docutils literal notranslate"><span class="pre">reorder_router_branches()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>。<code class="docutils literal notranslate"><span class="pre">stale_router_digest</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="property_stack.html#pme.editing.update_property_stack" title="pme.editing.update_property_stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property_stack()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>。<code class="docutils literal notranslate"><span class="pre">stale_property_stack_digest</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="property_stack.html#pme.editing.add_property_stack_row" title="pme.editing.add_property_stack_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_property_stack_row()</span></code></a>、
+<a class="reference internal" href="property_stack.html#pme.editing.update_property_stack_row" title="pme.editing.update_property_stack_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property_stack_row()</span></code></a>、
+<a class="reference internal" href="property_stack.html#pme.editing.remove_property_stack_row" title="pme.editing.remove_property_stack_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_property_stack_row()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>。<code class="docutils literal notranslate"><span class="pre">stale_property_stack_digest</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="property_stack.html#pme.editing.update_property_stack_hud" title="pme.editing.update_property_stack_hud"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property_stack_hud()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>、<code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>、<code class="docutils literal notranslate"><span class="pre">rejected</span></code>、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>、<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> ( <code class="docutils literal notranslate"><span class="pre">while_true_hud</span></code> の一部)。<code class="docutils literal notranslate"><span class="pre">stale_property_stack_hud</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="authoring-results-diagnostics">
+<span id="id7"></span><h2>診断<a class="headerlink" href="#authoring-results-diagnostics" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> は dict の list です。すべての項目が <code class="docutils literal notranslate"><span class="pre">code</span></code> を持ちます。
+その他のキーは項目によって異なります。</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 30.0%" />
+<col style="width: 48.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>キー</p></th>
+<th class="head"><p>含まれる項目</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>すべての項目</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stale_settings</span></code> などの機械可読な識別子。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">message</span></code></p></td>
+<td><p>大半の項目</p></td>
+<td><p>人が読むための説明。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">field</span></code> / <code class="docutils literal notranslate"><span class="pre">fields</span></code></p></td>
+<td><p>名前のある入力に関する項目</p></td>
+<td><p>入力名、または名前の list。
+stale のガードは、異なる名前を <code class="docutils literal notranslate"><span class="pre">fields</span></code> に挙げます。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pmi_uid</span></code></p></td>
+<td><p>スロット操作</p></td>
+<td><p>その項目が関係するスロット。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
+<td><p>Router と Property Stack の操作</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">logic.branches[0].target</span></code> など、入力またはロジック内の位置。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">severity</span></code></p></td>
+<td><p>一部の項目</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;error&quot;</span></code> または <code class="docutils literal notranslate"><span class="pre">&quot;warning&quot;</span></code>。Property Stack の項目は常に持ちます。
+それ以外では、ホットキーの衝突、削除後に残った参照、
+解決できない Router のメニュー対象などの警告を示します。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">exception_type</span></code></p></td>
+<td><p>捕捉した例外の項目</p></td>
+<td><p>例外のクラス名。traceback は Blender のコンソールに出力します。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">phase</span></code></p></td>
+<td><p><a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">preflight</span></code> や <code class="docutils literal notranslate"><span class="pre">readback</span></code> など、その項目を生成した段階。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code>, <code class="docutils literal notranslate"><span class="pre">actual</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stale_version</span></code></p></td>
+<td><p>渡したバージョンと現在のバージョン。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">line</span></code>, <code class="docutils literal notranslate"><span class="pre">column</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">invalid_syntax</span></code> (スロット操作)</p></td>
+<td><p>渡したテキスト内の構文エラーの位置。
+検査の前に、テキストの空白除去や字下げの変更は行いません。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>診断があること自体は失敗を意味しません。判定は <code class="docutils literal notranslate"><span class="pre">status</span></code> で行います。
+<code class="docutils literal notranslate"><span class="pre">committed</span></code> の結果にも診断が付く場合があります。</p></li>
+<li><p>関数固有のコードは、その関数の説明に記載します。</p></li>
+</ul>
+</section>
+<section id="authoring-results-exceptions">
+<span id="id8"></span><h2>例外<a class="headerlink" href="#authoring-results-exceptions" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 46.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>例外</p></th>
+<th class="head"><p>送出する条件</p></th>
+<th class="head"><p>保存状態</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code></p></td>
+<td><p>Blender のメインスレッド以外からの呼び出し、PME の読み込み完了前の呼び出し、
+または PME の Preferences がない状態での呼び出し(<a class="reference internal" href="concepts.html#authoring-concepts"><span class="std std-ref">基本事項</span></a>)。</p></td>
+<td><p>触れません。</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code></p></td>
+<td><p>引数の型が誤っている。マッピングでない <code class="docutils literal notranslate"><span class="pre">changes</span></code> や、
+bool でない <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> など。</p></td>
+<td><p>書き込みません。最初の書き込みの前に送出します。</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></p></td>
+<td><p>未知のフィールド、不正な値、矛盾する引数、
+または存在しない・不正・曖昧なメニュー UID。</p></td>
+<td><p>書き込みません。最初の書き込みの前に送出します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>書き込み開始後の任意の例外</p></td>
+<td><p>書き込み、エディターのコールバック、setter、refresh のいずれかが例外を送出した。</p></td>
+<td><p>一部が変更されている場合があります。traceback を保持し、注記を追加します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>書き込み開始後に、エディターやコールバックが <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> や <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> を送出する場合もあります。
+例外のクラスは、何も変わっていないことの証明になりません。
+traceback と注記を保持し、再試行の前に対象を読み直します。</p></li>
+<li><p>注記は例外の <code class="docutils literal notranslate"><span class="pre">__notes__</span></code> にあり、traceback とともに出力します。
+注記は、確定した内容または読むべき対象を示します：</p>
+<ul>
+<li><p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>：
+確定したスロット UID と、保存中だったスロット。</p></li>
+<li><p><a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a>：確定したフィールドと、例外を送出した段階。</p></li>
+<li><p><a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a>：保存値の読み戻し、変更したフィールド、登録の読み戻し。</p></li>
+<li><p>Pop-up Dialog と Floating Panel 以外のメニューでの <a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a>、
+<a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a>：呼び出し前のスロットの順序。</p></li>
+<li><p><a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>：保存定義を復元したかどうか。</p></li>
+<li><p>Router と Property Stack の操作：再試行の前にメニューを読むよう求める指示。
+Property Stack の注記は、最後に報告したステータスも示します。</p></li>
+</ul>
+</li>
+<li><p>Router と Property Stack の操作は、不正な形式の入力に対して例外を送出しません。
+<code class="docutils literal notranslate"><span class="pre">dry_run_must_be_a_boolean</span></code>、<code class="docutils literal notranslate"><span class="pre">expected_digest_must_be_a_string</span></code>、
+<code class="docutils literal notranslate"><span class="pre">branches_must_be_a_sequence</span></code> などの診断とともに <code class="docutils literal notranslate"><span class="pre">rejected</span></code> を返します。</p></li>
+<li><p><a class="reference internal" href="settings.html#pme.editing.update_settings" title="pme.editing.update_settings"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_settings()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a>、
+<a class="reference internal" href="menus.html#pme.editing.duplicate_pm" title="pme.editing.duplicate_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">duplicate_pm()</span></code></a>、<a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a>、<a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a> と、
+Pop-up Dialog または Floating Panel でのスロット操作・レイアウト操作は、
+書き込みの失敗を例外として送出せずに捕捉します。
+traceback を出力し、<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code> または <code class="docutils literal notranslate"><span class="pre">unknown</span></code> を返し
+(<a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a> は <code class="docutils literal notranslate"><span class="pre">rejected</span></code> または <code class="docutils literal notranslate"><span class="pre">unknown</span></code>)、
+失敗を <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> で説明します。</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="menus.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">メニュー</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="concepts.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">基本事項</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Pluglug and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">結果とガード</a><ul>
+<li><a class="reference internal" href="#id2">共通の結果キー</a></li>
+<li><a class="reference internal" href="#authoring-results-status">ステータスの値</a><ul>
+<li><a class="reference internal" href="#id4">確定ステータスが示す範囲</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#authoring-results-guards">ガード</a><ul>
+<li><a class="reference internal" href="#expected"><code class="docutils literal notranslate"><span class="pre">expected</span></code> の形式</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dry-run"><code class="docutils literal notranslate"><span class="pre">dry_run</span></code></a></li>
+<li><a class="reference internal" href="#authoring-results-by-operation">操作ごとの結果とガードの語彙</a></li>
+<li><a class="reference internal" href="#authoring-results-diagnostics">診断</a></li>
+<li><a class="reference internal" href="#authoring-results-exceptions">例外</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=05b04c43"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/translations.js?v=4755f45a"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
+    </body>
+</html>

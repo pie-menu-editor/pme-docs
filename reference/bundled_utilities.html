@@ -1,0 +1,910 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Context Browser" href="../editors/context_browser.html"><link rel="prev" title="Managing Scripts" href="script_management.html">
+        <link rel="canonical" href="https://docs.pie-menu-editor.com/reference/bundled_utilities.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
+        <title>Bundled Utilities - Pie Menu Editor 2.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=6b3a701d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/editor-overview.css?v=8fac9edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/hotkey-modes.css?v=682cae44" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0d82d0;
+  --color-brand-content: #0d82d0;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    (function () {
+        if (window.__PMEBeaconInitialized) {
+            return;
+        }
+
+        window.__PMEBeaconInitialized = true;
+
+        !function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+        window.Beacon('init', 'e458ab6a-6436-4e96-a0b6-038336504b24');
+        window.Beacon('config', {
+            display: {
+                style: 'manual'
+            }
+        });
+
+        window.PMEDocs = window.PMEDocs || {};
+        window.PMEDocs.beaconPrefillTemplates = {
+            supportRequest: [
+                'Summary:',
+                '- What went wrong?',
+                '',
+                'Steps to reproduce:',
+                '1.',
+                '2.',
+                '3.',
+                '',
+                'What happened:',
+                '- Describe the actual result.',
+                '',
+                'Environment:',
+                '- Blender version:',
+                '- PME version:',
+                '- OS:',
+                '',
+                'Attachments:',
+                '- PME setup JSON:',
+                '- Console output / screenshot:',
+                '- Small .blend file (if relevant):',
+                '',
+                'Additional notes:',
+                '- Anything else that may help.'
+            ].join('\n')
+        };
+
+        window.PMEDocs.openSupportBeacon = function (event, templateName) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            if (typeof window.Beacon === 'function') {
+                const prefillText = window.PMEDocs.beaconPrefillTemplates[templateName];
+                if (prefillText) {
+                    window.Beacon('prefill', {
+                        text: prefillText
+                    });
+                }
+
+                window.Beacon('open');
+                window.Beacon('navigate', '/ask/message/');
+                return false;
+            }
+
+            return true;
+        };
+
+        document.addEventListener('click', function (event) {
+            const trigger = event.target.closest('[data-beacon-open]');
+            if (!trigger) {
+                return;
+            }
+
+            window.PMEDocs.openSupportBeacon(event, trigger.dataset.beaconTemplate);
+        });
+    }());
+</script></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Pie Menu Editor 2.4 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">Pie Menu Editor 2.4 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/basic_pie_menu.html">Create Your First Pie Menu</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples &amp; Ideas</a><input aria-label="Toggle navigation of Examples &amp; Ideas" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripting_workflow.html">Code Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Editors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../editors/editor_common_elements.html">Common Editor Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hotkey_modes.html">Hotkey Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/pie_menu_editor.html">Pie Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/vector_menu_editor.html">Vector Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/regular_menu_editor.html">Regular Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/popup_dialog_editor.html">Pop-up Dialog Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/floating_panel_editor.html">Floating Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/sticky_key_editor.html">Sticky Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/stack_key_editor.html">Stack Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/macro_operator_editor.html">Macro Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/modal_operator_editor.html">Modal Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/property_editor.html">Property Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/property_stack_editor.html">Property Stack Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/context_router_editor.html">Context Router Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/side_panel_editor.html">Side Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/hiding_unused_panels.html">Hiding Unused Panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/interactive_panels.html">Interactive Panels and Extend Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/ui_customization.html">UI Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/context_menu.html">Capture Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/custom_icons.html">Custom Icons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/settings.html">Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="command_text.html">Writing and Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="script_management.html">Managing Scripts</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Bundled Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/context_browser.html">Context Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Authoring API</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="authoring/index.html">Overview</a><input aria-label="Toggle navigation of Overview" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="authoring/concepts.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/results.html">Results and guards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/slots.html">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/layout.html">Layout rows and panels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/settings.html">Menu type settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/hotkeys.html">Hotkeys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/property.html">Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/property_stack.html">Property Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/router.html">Context Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/export_validate.html">Export and validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/execution.html">Execution, user properties and identity</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="authoring/recipes/index.html">Recipes</a><input aria-label="Toggle navigation of Recipes" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/layout_build_panel_rows.html">Build a panel row by row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/property_stack_new.html">Author a Property Stack and show its state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/property_switch.html">Turn a setting into a Property switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/router_add_branch.html">Add a Router branch and edit its condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/slots_link_child_menu.html">Link a child menu and keep its icon flags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keymap_guide.html">Choosing a Keymap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap_duplicates.html">Keymap Conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poll_method.html">Poll Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_locations.html">File Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot_options.html">Boot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_options.html">Developer Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="original_author_videos.html">Video Tutorials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/faq.html#known-issues">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/get_support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/changelog.html">Change Log</a></li>
+</ul>
+
+</div>
+</div>
+<nav class="documentation-languages" aria-label="Language">
+  
+  <a href="bundled_utilities.html" lang="en" hreflang="en" aria-label="English" title="English" aria-current="true"><span aria-hidden="true">🇺🇸</span></a>
+  
+  <a href="../ja/reference/bundled_utilities.html" lang="ja" hreflang="ja" aria-label="日本語" title="日本語"><span aria-hidden="true">🇯🇵</span></a>
+  
+</nav>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.documentation-languages a')];
+  const targets = links.map(link => link.getAttribute('href'));
+  function syncFragment() {
+    links.forEach((link, index) => { link.href = targets[index] + window.location.hash; });
+  }
+  syncFragment();
+  window.addEventListener('hashchange', syncFragment);
+})();
+</script>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/reference/bundled_utilities.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="bundled-utilities">
+<span id="id1"></span><h1>Bundled Utilities<a class="headerlink" href="#bundled-utilities" title="Link to this heading">¶</a></h1>
+<p>PME loads these helpers from its bundled <code class="docutils literal notranslate"><span class="pre">assets/scripts/autorun/</span></code> folder when
+the add-on starts. Use their registered names directly in PME script fields;
+you do not need to import or copy the bundled files. Do not edit those files to
+customize them: updates can replace them. To register your own helpers, see
+<a class="reference internal" href="scripting.html#autorun-scripts"><span class="std std-ref">Auto-run Scripts</span></a>.</p>
+<p>These utilities complement the <a class="reference internal" href="scripting.html"><span class="std std-doc">API Reference</span></a>. They are not menu
+editing operations in the <a class="reference internal" href="authoring/index.html"><span class="std std-doc">Authoring API</span></a>. To manage script files,
+see <a class="reference internal" href="script_management.html"><span class="std std-doc">Managing Scripts</span></a>.</p>
+<p>Examples below are one-line expressions or statements for PME fields. <code class="docutils literal notranslate"><span class="pre">L</span></code> is
+available while drawing a Custom slot; <code class="docutils literal notranslate"><span class="pre">E</span></code> requires an input event. Pass <code class="docutils literal notranslate"><span class="pre">C</span></code>
+explicitly to helpers that accept a context so they use the invoking editor.
+Calls without a context use <code class="docutils literal notranslate"><span class="pre">bpy.context</span></code>, which can refer to another editor
+while a popup or Preferences is active. The helpers do not create missing
+editor context or make an unavailable Blender operator available.</p>
+<section id="function-index">
+<h2>Function index<a class="headerlink" href="#function-index" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Purpose</p></th>
+<th class="head"><p>Registered names</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Active tool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">get_active_tool</span></code>, <code class="docutils literal notranslate"><span class="pre">get_active_tool_id</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mesh selection and pointer</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">get_mesh_selection_kind</span></code>, <code class="docutils literal notranslate"><span class="pre">pick_mesh_view3d</span></code>, <code class="docutils literal notranslate"><span class="pre">get_loc2d</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Tool and DAT icons</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">get_tool_icon_value</span></code>, <code class="docutils literal notranslate"><span class="pre">get_dat_icon</span></code>, <code class="docutils literal notranslate"><span class="pre">release_dat_icons</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Paint settings</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ups</span></code>, <code class="docutils literal notranslate"><span class="pre">brush</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Assignment and errors</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">setattr</span></code>, <code class="docutils literal notranslate"><span class="pre">try_setattr</span></code>, <code class="docutils literal notranslate"><span class="pre">raise_error</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Event modifiers</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">event_mods</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Existing name-based menu routing</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CSM</span></code> (see the collapsed reference below)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="active-tool">
+<h2>Active tool<a class="headerlink" href="#active-tool" title="Link to this heading">¶</a></h2>
+<section id="get-active-tool-context-none">
+<h3><code class="docutils literal notranslate"><span class="pre">get_active_tool(context=None)</span></code><a class="headerlink" href="#get-active-tool-context-none" title="Link to this heading">¶</a></h3>
+<p>Returns Blender’s active <code class="docutils literal notranslate"><span class="pre">WorkSpaceTool</span></code>-like object, or <code class="docutils literal notranslate"><span class="pre">None</span></code> when Blender’s
+tool resolver finds no tool. It uses the editor and mode of the supplied context,
+not a search for an arbitrary 3D View. Provide a context with a workspace and
+space data. Blender decides which editors expose a tool; this is not limited
+to mesh tools or the 3D View.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tool</span> <span class="o">=</span> <span class="n">get_active_tool</span><span class="p">(</span><span class="n">C</span><span class="p">);</span> <span class="n">message_box</span><span class="p">(</span><span class="n">tool</span><span class="o">.</span><span class="n">idname</span> <span class="k">if</span> <span class="n">tool</span> <span class="k">else</span> <span class="s2">"No active tool"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use the returned object immediately; do not retain it across workspace, editor,
+or mode changes. This resolves the current tool; it does not activate a tool.</p>
+</section>
+<section id="get-active-tool-id-context-none">
+<h3><code class="docutils literal notranslate"><span class="pre">get_active_tool_id(context=None)</span></code><a class="headerlink" href="#get-active-tool-id-context-none" title="Link to this heading">¶</a></h3>
+<p>Returns the active tool’s <code class="docutils literal notranslate"><span class="pre">idname</span></code> as a string, such as <code class="docutils literal notranslate"><span class="pre">&quot;builtin.select_box&quot;</span></code>.
+Returns <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> if the context has no workspace or space data, or no tool is found.
+The ID is not the translated label or an icon name.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">get_active_tool_id</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'builtin.select_box'</span>
+</pre></div>
+</div>
+<p>Use that expression in a condition, or display the result in a Custom slot:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">get_active_tool_id</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">"No active tool"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="mesh-selection-and-pointer">
+<h2>Mesh selection and pointer<a class="headerlink" href="#mesh-selection-and-pointer" title="Link to this heading">¶</a></h2>
+<section id="get-mesh-selection-kind-context-fallback-true">
+<h3><code class="docutils literal notranslate"><span class="pre">get_mesh_selection_kind(context,</span> <span class="pre">fallback=True)</span></code><a class="headerlink" href="#get-mesh-selection-kind-context-fallback-true" title="Link to this heading">¶</a></h3>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">1</span></code> for vertices, <code class="docutils literal notranslate"><span class="pre">2</span></code> for edges, <code class="docutils literal notranslate"><span class="pre">3</span></code> for faces, or <code class="docutils literal notranslate"><span class="pre">0</span></code> for no applicable
+selection. Requires Mesh Edit Mode to inspect geometry; outside <code class="docutils literal notranslate"><span class="pre">EDIT_MESH</span></code> it
+returns <code class="docutils literal notranslate"><span class="pre">0</span></code>. It reads editable mesh data across objects with unique mesh data
+and does not change selection.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">get_mesh_selection_kind</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>With one selection mode enabled and <code class="docutils literal notranslate"><span class="pre">fallback=True</span></code>, returns that mode even
+when nothing is selected.</p></li>
+<li><p>With <code class="docutils literal notranslate"><span class="pre">fallback=False</span></code>, a single mode requires a selected, non-hidden element
+of that type; otherwise returns <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>In mixed selection modes, selected vertices that do not belong to selected
+faces/edges in enabled modes take priority, then selected faces, then edges.
+Hidden elements are excluded.</p></li>
+<li><p>If no eligible element is found and <code class="docutils literal notranslate"><span class="pre">fallback=True</span></code>, uses the enabled modes
+in vertex → face → edge order. With <code class="docutils literal notranslate"><span class="pre">fallback=False</span></code>, returns <code class="docutils literal notranslate"><span class="pre">0</span></code> instead.</p></li>
+</ul>
+<p>This is an inference from selection flags, not a record of what was clicked
+last. Blender can represent a selected face and its selected corner vertices
+with the same flags. Use <code class="docutils literal notranslate"><span class="pre">pick_mesh_view3d</span></code> when the element under the pointer is the
+information you need. This function does not inspect UV selection.</p>
+</section>
+<section id="pick-mesh-view3d-context-mouse-xy-radius-12">
+<h3><code class="docutils literal notranslate"><span class="pre">pick_mesh_view3d(context,</span> <span class="pre">mouse_xy,</span> <span class="pre">radius=12)</span></code><a class="headerlink" href="#pick-mesh-view3d-context-mouse-xy-radius-12" title="Link to this heading">¶</a></h3>
+<p>Reads the object or mesh component under a window-coordinate pointer position
+without selecting it. Requires a 3D View <strong>WINDOW region</strong>, in Object Mode or
+Mesh Edit Mode. Other contexts return a no-hit dictionary.</p>
+<p>Example in an event-backed Command slot:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hit</span> <span class="o">=</span> <span class="n">pick_mesh_view3d</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">mouse_x</span><span class="p">,</span> <span class="n">E</span><span class="o">.</span><span class="n">mouse_y</span><span class="p">));</span> <span class="n">message_box</span><span class="p">(</span><span class="n">hit</span><span class="p">[</span><span class="s1">'kind'</span><span class="p">]</span> <span class="ow">or</span> <span class="s2">"No hit"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pass <strong>window</strong> coordinates, not <code class="docutils literal notranslate"><span class="pre">mouse_region_x</span></code> / <code class="docutils literal notranslate"><span class="pre">mouse_region_y</span></code>. The helper
+subtracts the target region’s origin. It uses the coordinates you supply at
+call time; it does not capture the menu-opening position or track later motion.
+If routing must use the opening position, retain that position in the caller.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Result key</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kind</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'OBJECT'</span></code>, <code class="docutils literal notranslate"><span class="pre">'VERT'</span></code>, <code class="docutils literal notranslate"><span class="pre">'EDGE'</span></code>, <code class="docutils literal notranslate"><span class="pre">'FACE'</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">object</span></code></p></td>
+<td><p>Hit Blender object, or <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">index</span></code></p></td>
+<td><p>Current BMesh iteration position for an Edit Mode component; otherwise <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mouse_xy</span></code></p></td>
+<td><p>Region-relative <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> after conversion, or <code class="docutils literal notranslate"><span class="pre">None</span></code> for an invalid area/region</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">distance_px</span></code></p></td>
+<td><p>Present only for a vertex/edge hit: distance from the pointer in screen pixels</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In Object Mode this uses a scene ray cast and checks visibility of the returned
+object. It does not reproduce picking of non-surface objects such as lights or
+empties, and does not return a component index from the evaluated mesh.</p>
+<p>In Mesh Edit Mode, vertices within <code class="docutils literal notranslate"><span class="pre">radius</span></code> win over edges within <code class="docutils literal notranslate"><span class="pre">radius</span></code>, then
+the nearest surface face. Only enabled selection modes are considered. A negative
+radius is treated as zero. Hidden elements are excluded; X-Ray allows vertex/edge
+hits through editable faces.</p>
+<p><strong>Limits:</strong> this is an approximation, not Blender’s native selection-buffer
+picker. It uses the editable cage, not modifier output. Backfaces count as
+surfaces, and viewport clipping planes are not reproduced. In Edit Mode only
+non-hidden editable mesh faces occlude hits; objects outside Edit Mode do not.
+Indices are valid for the immediate observation only and must not be saved as
+stable element identifiers. Geometry is rebuilt for each call: avoid repeated
+calls in draw code or frequently evaluated conditions on dense meshes. No
+handlers, timers, selection writes, or persistent geometry caches are installed.</p>
+</section>
+<section id="get-loc2d-context-coord">
+<h3><code class="docutils literal notranslate"><span class="pre">get_loc2d(context,</span> <span class="pre">coord)</span></code><a class="headerlink" href="#get-loc2d-context-coord" title="Link to this heading">¶</a></h3>
+<p>Projects a <strong>world-space</strong> 3D coordinate into region-relative 2D coordinates.
+Returns a <code class="docutils literal notranslate"><span class="pre">mathutils.Vector</span></code> with two components, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if region/view data
+is unavailable or Blender cannot project the point (for example, behind a
+perspective view). <code class="docutils literal notranslate"><span class="pre">context=None</span></code> uses <code class="docutils literal notranslate"><span class="pre">bpy.context</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="n">get_loc2d</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">C</span><span class="o">.</span><span class="n">active_object</span><span class="o">.</span><span class="n">matrix_world</span><span class="o">.</span><span class="n">translation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This example requires an active object and a 3D View drawing region. Convert a
+mesh-local coordinate with <code class="docutils literal notranslate"><span class="pre">obj.matrix_world</span> <span class="pre">&#64;</span> <span class="pre">coord</span></code> first. A returned point
+can be outside the viewport; it is not a visibility or occlusion test. The
+helper uses <code class="docutils literal notranslate"><span class="pre">space_data.region_3d</span></code>, so do not assume it selects the correct
+subview in every Quad View region. Unlike <code class="docutils literal notranslate"><span class="pre">pick_mesh_view3d</span></code>, its output is already
+region-relative.</p>
+</section>
+</section>
+<section id="icons">
+<h2>Icons<a class="headerlink" href="#icons" title="Link to this heading">¶</a></h2>
+<section id="get-tool-icon-value-name">
+<h3><code class="docutils literal notranslate"><span class="pre">get_tool_icon_value(name)</span></code><a class="headerlink" href="#get-tool-icon-value-name" title="Link to this heading">¶</a></h3>
+<p>Returns an integer icon ID for a Blender <strong>tool icon handle</strong>, not a tool ID or
+an RNA icon enum. A typical handle is <code class="docutils literal notranslate"><span class="pre">&quot;ops.generic.select_box&quot;</span></code>.
+Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> for an empty name. It first uses Blender’s tool icon loader; if that
+raises, it falls back to <code class="docutils literal notranslate"><span class="pre">get_dat_icon(name)</span></code>. Unavailable icons may resolve to
+Blender’s fallback icon or <code class="docutils literal notranslate"><span class="pre">0</span></code>, so a nonzero ID is not proof of an exact match.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Box Select"</span><span class="p">,</span> <span class="n">icon_value</span><span class="o">=</span><span class="n">get_tool_icon_value</span><span class="p">(</span><span class="s1">'ops.generic.select_box'</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Use in a Custom slot with a drawing layout. Prefer PME’s Auto Icon option for
+a normal tool-switching slot; this helper is for custom drawing.</p>
+</section>
+<section id="get-dat-icon-icon-name">
+<h3><code class="docutils literal notranslate"><span class="pre">get_dat_icon(icon_name)</span></code><a class="headerlink" href="#get-dat-icon-icon-name" title="Link to this heading">¶</a></h3>
+<p>Returns an integer icon ID loaded from a <code class="docutils literal notranslate"><span class="pre">.dat</span></code> triangle icon. Pass its name
+without <code class="docutils literal notranslate"><span class="pre">.dat</span></code>, not a filesystem path. Search order is Blender’s
+<code class="docutils literal notranslate"><span class="pre">DATAFILES/icons</span></code>, PME user icon directories, then bundled icons.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Box Select"</span><span class="p">,</span> <span class="n">icon_value</span><span class="o">=</span><span class="n">get_dat_icon</span><span class="p">(</span><span class="s1">'ops.generic.select_box'</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> for an empty name, a missing/ambiguous/unloadable icon, or when an
+old cached icon cannot be released before replacement. Missing/corrupt files
+produce a warning; ambiguous user names are reported through resource discovery.
+Loaded IDs are cached. Do not save these runtime IDs in a preset or reuse them
+across restarts. This is not a PNG loader. Icon availability depends on the
+installed Blender and configured resources, not the active modeling mode.</p>
+</section>
+<section id="release-dat-icons">
+<h3><code class="docutils literal notranslate"><span class="pre">release_dat_icons()</span></code><a class="headerlink" href="#release-dat-icons" title="Link to this heading">¶</a></h3>
+<p>Releases the DAT IDs owned by this helper and clears its Blender path lookup
+cache. Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>. IDs that cannot be released remain tracked for a later
+retry. This does not release all Blender icons or icons owned by other loaders.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">release_dat_icons</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This is a reload/development helper, not something to run on every draw. Stop
+using cached IDs before releasing them; request fresh IDs for subsequent UI.</p>
+</section>
+</section>
+<section id="paint-settings">
+<h2>Paint settings<a class="headerlink" href="#paint-settings" title="Link to this heading">¶</a></h2>
+<section id="ups">
+<h3><code class="docutils literal notranslate"><span class="pre">ups()</span></code><a class="headerlink" href="#ups" title="Link to this heading">¶</a></h3>
+<p>Returns the raw Unified Paint Settings object for the current <code class="docutils literal notranslate"><span class="pre">bpy.context</span></code>.
+On hosts with scene-wide unified settings it returns that owner. On hosts with
+mode-specific settings it resolves the current paint mode independently of the
+active tool. It raises <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> if that context has no unified settings.</p>
+<p>Example Custom slot in an applicable paint context:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">ups</span><span class="p">(),</span> <span class="s1">'size'</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">'Unified Size'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It does not choose a brush or switch modes. Property availability follows the
+host’s returned RNA object. In Blender 5.3, active <code class="docutils literal notranslate"><span class="pre">use_unified_*</span></code> flags live on
+the Brush; do not assume those flags exist on the object returned by <code class="docutils literal notranslate"><span class="pre">ups()</span></code>.</p>
+</section>
+<section id="brush-use-ups-false">
+<h3><code class="docutils literal notranslate"><span class="pre">brush(use_ups=False)</span></code><a class="headerlink" href="#brush-use-ups-false" title="Link to this heading">¶</a></h3>
+<p>Returns the active Brush from Blender’s current paint settings, or <code class="docutils literal notranslate"><span class="pre">None</span></code> when
+no brush is available. With <code class="docutils literal notranslate"><span class="pre">use_ups=True</span></code>, returns <code class="docutils literal notranslate"><span class="pre">ups()</span></code> instead (including
+its errors); that result is unified settings, not a Brush. Uses <code class="docutils literal notranslate"><span class="pre">bpy.context</span></code>
+and Blender’s paint-settings resolver; mode and active tool can affect brush
+availability.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">brush</span><span class="p">();</span> <span class="n">L</span><span class="o">.</span><span class="n">prop</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s1">'strength'</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">'Strength'</span><span class="p">)</span> <span class="k">if</span> <span class="n">b</span> <span class="k">else</span> <span class="n">L</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">'No active brush'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This example belongs in a Custom slot in a paint/sculpt context. Do not
+dereference <code class="docutils literal notranslate"><span class="pre">brush().size</span></code> without ensuring a brush exists. The historical
+expression <code class="docutils literal notranslate"><span class="pre">brush(ups().use_unified_size).size</span></code> assumes unified flags live on
+Unified Paint Settings and is not suitable for hosts that put them on Brush.</p>
+</section>
+</section>
+<section id="assignment-events-and-errors">
+<h2>Assignment, events, and errors<a class="headerlink" href="#assignment-events-and-errors" title="Link to this heading">¶</a></h2>
+<section id="setattr-object-name-value">
+<h3><code class="docutils literal notranslate"><span class="pre">setattr(object,</span> <span class="pre">name,</span> <span class="pre">value)</span></code><a class="headerlink" href="#setattr-object-name-value" title="Link to this heading">¶</a></h3>
+<p>Sets an attribute and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> after a successful assignment. Unlike
+Python’s built-in <code class="docutils literal notranslate"><span class="pre">setattr</span></code>, PME’s registered helper returns a boolean.
+Assignment errors propagate. The target must exist and its property must be
+writable in the current context.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">setattr</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">tool_settings</span><span class="p">,</span> <span class="s1">'use_proportional_edit'</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use in a Command, not a drawing callback or a condition that should only read
+state. For a visible toggle, prefer a Custom slot widget such as
+<code class="docutils literal notranslate"><span class="pre">L.prop(C.tool_settings,</span> <span class="pre">'use_proportional_edit',</span> <span class="pre">toggle=True)</span></code>. This helper
+does not create its own Undo step.</p>
+</section>
+<section id="try-setattr-object-name-value">
+<h3><code class="docutils literal notranslate"><span class="pre">try_setattr(object,</span> <span class="pre">name,</span> <span class="pre">value)</span></code><a class="headerlink" href="#try-setattr-object-name-value" title="Link to this heading">¶</a></h3>
+<p>Attempts the same assignment, but catches assignment exceptions and <strong>always
+returns <code class="docutils literal notranslate"><span class="pre">True</span></code></strong>, including when nothing was changed. This is existing behavior;
+do not use the result to verify success.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">try_setattr</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">active_object</span><span class="p">,</span> <span class="s1">'show_name'</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No particular editor is required, but the target and property still determine
+whether the assignment can work. Use <code class="docutils literal notranslate"><span class="pre">setattr</span></code> when a failure should be visible,
+and read back the property when verifying a change. This helper neither reports
+the failure nor creates its own Undo step.</p>
+</section>
+<section id="event-mods-event">
+<h3><code class="docutils literal notranslate"><span class="pre">event_mods(event)</span></code><a class="headerlink" href="#event-mods-event" title="Link to this heading">¶</a></h3>
+<p>Returns a string joining active modifiers in <strong>Ctrl, Shift, Alt, OSKey</strong> order,
+for example <code class="docutils literal notranslate"><span class="pre">&quot;Ctrl+Shift&quot;</span></code>. Returns the literal string <code class="docutils literal notranslate"><span class="pre">&quot;None&quot;</span></code> if none are set;
+missing modifier attributes count as false. Requires an event-like value, not
+a particular editor or mode. It does not report non-modifier keys.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message_box</span><span class="p">(</span><span class="n">event_mods</span><span class="p">(</span><span class="n">E</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Use from an event-backed Command. This reads the supplied event, not the
+keyboard’s current state at some later time.</p>
+</section>
+<section id="raise-error-message">
+<h3><code class="docutils literal notranslate"><span class="pre">raise_error(message)</span></code><a class="headerlink" href="#raise-error-message" title="Link to this heading">¶</a></h3>
+<p>Attempts to show PME’s error message box, then raises <code class="docutils literal notranslate"><span class="pre">Exception(message)</span></code>.
+It has no normal return value and aborts the current script. Requires a UI
+context where the message-box operator can run; if that operator fails, its
+error propagates instead.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raise_error</span><span class="p">(</span><span class="s1">'Select a mesh before running this command'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use for an actual error in a Command, not an ordinary false condition or
+repeated draw-time notification.</p>
+</section>
+</section>
+<section id="contextsensitivemenu-csm">
+<h2>ContextSensitiveMenu (<code class="docutils literal notranslate"><span class="pre">CSM</span></code>)<a class="headerlink" href="#contextsensitivemenu-csm" title="Link to this heading">¶</a></h2>
+<p>For new menus, use <a class="reference internal" href="../editors/context_router_editor.html"><span class="std std-doc">Context Router</span></a>.
+Separate editors with Keymap where possible, then use a Context Router for
+conditions within an editor. This makes branches explicit without relying on
+menu naming conventions. <code class="docutils literal notranslate"><span class="pre">CSM</span></code> remains available for existing customizations.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ContextSensitiveMenu compatibility reference and examples</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CSM.from_context(context,</span> <span class="pre">prefix=&quot;&quot;,</span> <span class="pre">suffix=&quot;&quot;)</span></code> returns a
+<code class="docutils literal notranslate"><span class="pre">ContextSensitiveMenu</span></code> instance with a resolved <code class="docutils literal notranslate"><span class="pre">menu_name</span></code> (string or <code class="docutils literal notranslate"><span class="pre">None</span></code>).
+Pass <code class="docutils literal notranslate"><span class="pre">C</span></code> to use the invoking context. It reads the <strong>active object</strong>, not the
+pointer hit or merely whether the selected-object list is empty.</p>
+<p class="sd-card-text">Command example, with menus such as <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Vertex</span> <span class="pre">Menu</span></code> and <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Mesh</span> <span class="pre">Menu</span></code> already created:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CSM.from_context(C, prefix='My ', suffix=' Menu').open_menu()
+</pre></div>
+</div>
+<p class="sd-card-text">Custom example, with drawable menus such as <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Vertex</span> <span class="pre">Panel</span></code> already created:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CSM.from_context(C, prefix='My ', suffix=' Panel').draw_menu(layout=L)
+</pre></div>
+</div>
+<p class="sd-card-text">Names are formed by replacing underscores with spaces, applying title case,
+then adding the prefix/suffix. Only existing, enabled menus match.</p>
+<ul class="simple">
+<li><p>No active object: resolves the name <code class="docutils literal notranslate"><span class="pre">None</span> <span class="pre">Object</span></code>; it does not fall back to
+<code class="docutils literal notranslate"><span class="pre">Any</span> <span class="pre">Object</span></code> in this branch.</p></li>
+<li><p>Mesh Edit Mode: enabled selection modes in <strong>Vertex → Edge → Face</strong> order,
+then <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Mesh</span></code>, <code class="docutils literal notranslate"><span class="pre">Mesh</span></code>, <code class="docutils literal notranslate"><span class="pre">Any</span> <span class="pre">Object</span></code>. This tests enabled selection modes,
+not selected elements and not <code class="docutils literal notranslate"><span class="pre">get_mesh_selection_kind()</span></code>.</p></li>
+<li><p>Mesh in another non-Object mode: current mode, then <code class="docutils literal notranslate"><span class="pre">Mesh</span></code>, <code class="docutils literal notranslate"><span class="pre">Any</span> <span class="pre">Object</span></code>.</p></li>
+<li><p>Mesh in Object Mode: <code class="docutils literal notranslate"><span class="pre">Mesh</span></code>, then <code class="docutils literal notranslate"><span class="pre">Any</span> <span class="pre">Object</span></code>.</p></li>
+<li><p>Empty: <code class="docutils literal notranslate"><span class="pre">Image</span></code>, or <code class="docutils literal notranslate"><span class="pre">Instance</span></code>, or the force-field type followed by <code class="docutils literal notranslate"><span class="pre">Field</span></code>
+when applicable; then <code class="docutils literal notranslate"><span class="pre">Empty</span></code>, <code class="docutils literal notranslate"><span class="pre">Any</span> <span class="pre">Object</span></code>.</p></li>
+<li><p>Other object types: current non-Object mode, object type, then <code class="docutils literal notranslate"><span class="pre">Any</span> <span class="pre">Object</span></code>.</p></li>
+</ul>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">open_menu(**kwargs)</span></code> and <code class="docutils literal notranslate"><span class="pre">draw_menu(**kwargs)</span></code> return <code class="docutils literal notranslate"><span class="pre">None</span></code>; keyword arguments
+are passed to PME’s corresponding menu helper. Drawing requires a valid layout;
+opening requires a usable invocation context. Missing/disabled menus log a
+warning and do nothing. A failure from opening/drawing is reported as an error.
+An existing enabled menu may still be unavailable because of its Poll.</p>
+<p class="sd-card-text">For inspection, <code class="docutils literal notranslate"><span class="pre">CSM.has_menu(name)</span></code> and <code class="docutils literal notranslate"><span class="pre">instance.check_menu_exists()</span></code> return
+booleans; the latter also warns on a missing menu. <code class="docutils literal notranslate"><span class="pre">instance.format_name(name)</span></code>
+returns the formatted string, and <code class="docutils literal notranslate"><span class="pre">instance.check_and_set_menu(name)</span></code> returns
+that string for an enabled menu or <code class="docutils literal notranslate"><span class="pre">None</span></code> (it does not assign <code class="docutils literal notranslate"><span class="pre">menu_name</span></code>).
+<code class="docutils literal notranslate"><span class="pre">instance.gen_menu_name()</span></code> recomputes the name and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Create a new instance after context changes instead of retaining a captured
+active object across edits.</p>
+</div>
+</details></section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../editors/context_browser.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Context Browser</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="script_management.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Managing Scripts</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Pluglug and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Bundled Utilities</a><ul>
+<li><a class="reference internal" href="#function-index">Function index</a></li>
+<li><a class="reference internal" href="#active-tool">Active tool</a><ul>
+<li><a class="reference internal" href="#get-active-tool-context-none"><code class="docutils literal notranslate"><span class="pre">get_active_tool(context=None)</span></code></a></li>
+<li><a class="reference internal" href="#get-active-tool-id-context-none"><code class="docutils literal notranslate"><span class="pre">get_active_tool_id(context=None)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mesh-selection-and-pointer">Mesh selection and pointer</a><ul>
+<li><a class="reference internal" href="#get-mesh-selection-kind-context-fallback-true"><code class="docutils literal notranslate"><span class="pre">get_mesh_selection_kind(context,</span> <span class="pre">fallback=True)</span></code></a></li>
+<li><a class="reference internal" href="#pick-mesh-view3d-context-mouse-xy-radius-12"><code class="docutils literal notranslate"><span class="pre">pick_mesh_view3d(context,</span> <span class="pre">mouse_xy,</span> <span class="pre">radius=12)</span></code></a></li>
+<li><a class="reference internal" href="#get-loc2d-context-coord"><code class="docutils literal notranslate"><span class="pre">get_loc2d(context,</span> <span class="pre">coord)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icons">Icons</a><ul>
+<li><a class="reference internal" href="#get-tool-icon-value-name"><code class="docutils literal notranslate"><span class="pre">get_tool_icon_value(name)</span></code></a></li>
+<li><a class="reference internal" href="#get-dat-icon-icon-name"><code class="docutils literal notranslate"><span class="pre">get_dat_icon(icon_name)</span></code></a></li>
+<li><a class="reference internal" href="#release-dat-icons"><code class="docutils literal notranslate"><span class="pre">release_dat_icons()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#paint-settings">Paint settings</a><ul>
+<li><a class="reference internal" href="#ups"><code class="docutils literal notranslate"><span class="pre">ups()</span></code></a></li>
+<li><a class="reference internal" href="#brush-use-ups-false"><code class="docutils literal notranslate"><span class="pre">brush(use_ups=False)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#assignment-events-and-errors">Assignment, events, and errors</a><ul>
+<li><a class="reference internal" href="#setattr-object-name-value"><code class="docutils literal notranslate"><span class="pre">setattr(object,</span> <span class="pre">name,</span> <span class="pre">value)</span></code></a></li>
+<li><a class="reference internal" href="#try-setattr-object-name-value"><code class="docutils literal notranslate"><span class="pre">try_setattr(object,</span> <span class="pre">name,</span> <span class="pre">value)</span></code></a></li>
+<li><a class="reference internal" href="#event-mods-event"><code class="docutils literal notranslate"><span class="pre">event_mods(event)</span></code></a></li>
+<li><a class="reference internal" href="#raise-error-message"><code class="docutils literal notranslate"><span class="pre">raise_error(message)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contextsensitivemenu-csm">ContextSensitiveMenu (<code class="docutils literal notranslate"><span class="pre">CSM</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9caaf7ed"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    </body>
+</html>

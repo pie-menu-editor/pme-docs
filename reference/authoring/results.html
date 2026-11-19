@@ -1,0 +1,1140 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Menus" href="menus.html"><link rel="prev" title="Concepts" href="concepts.html">
+        <link rel="canonical" href="https://docs.pie-menu-editor.com/reference/authoring/results.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
+        <title>Results and guards - Pie Menu Editor 2.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=6b3a701d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/editor-overview.css?v=8fac9edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/hotkey-modes.css?v=682cae44" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0d82d0;
+  --color-brand-content: #0d82d0;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    (function () {
+        if (window.__PMEBeaconInitialized) {
+            return;
+        }
+
+        window.__PMEBeaconInitialized = true;
+
+        !function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+        window.Beacon('init', 'e458ab6a-6436-4e96-a0b6-038336504b24');
+        window.Beacon('config', {
+            display: {
+                style: 'manual'
+            }
+        });
+
+        window.PMEDocs = window.PMEDocs || {};
+        window.PMEDocs.beaconPrefillTemplates = {
+            supportRequest: [
+                'Summary:',
+                '- What went wrong?',
+                '',
+                'Steps to reproduce:',
+                '1.',
+                '2.',
+                '3.',
+                '',
+                'What happened:',
+                '- Describe the actual result.',
+                '',
+                'Environment:',
+                '- Blender version:',
+                '- PME version:',
+                '- OS:',
+                '',
+                'Attachments:',
+                '- PME setup JSON:',
+                '- Console output / screenshot:',
+                '- Small .blend file (if relevant):',
+                '',
+                'Additional notes:',
+                '- Anything else that may help.'
+            ].join('\n')
+        };
+
+        window.PMEDocs.openSupportBeacon = function (event, templateName) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            if (typeof window.Beacon === 'function') {
+                const prefillText = window.PMEDocs.beaconPrefillTemplates[templateName];
+                if (prefillText) {
+                    window.Beacon('prefill', {
+                        text: prefillText
+                    });
+                }
+
+                window.Beacon('open');
+                window.Beacon('navigate', '/ask/message/');
+                return false;
+            }
+
+            return true;
+        };
+
+        document.addEventListener('click', function (event) {
+            const trigger = event.target.closest('[data-beacon-open]');
+            if (!trigger) {
+                return;
+            }
+
+            window.PMEDocs.openSupportBeacon(event, trigger.dataset.beaconTemplate);
+        });
+    }());
+</script></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Pie Menu Editor 2.4 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">Pie Menu Editor 2.4 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/basic_pie_menu.html">Create Your First Pie Menu</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples &amp; Ideas</a><input aria-label="Toggle navigation of Examples &amp; Ideas" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting_workflow.html">Code Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Editors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/editor_common_elements.html">Common Editor Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hotkey_modes.html">Hotkey Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/pie_menu_editor.html">Pie Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/vector_menu_editor.html">Vector Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/regular_menu_editor.html">Regular Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/popup_dialog_editor.html">Pop-up Dialog Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/floating_panel_editor.html">Floating Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/sticky_key_editor.html">Sticky Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/stack_key_editor.html">Stack Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/macro_operator_editor.html">Macro Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/modal_operator_editor.html">Modal Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/property_editor.html">Property Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/property_stack_editor.html">Property Stack Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_router_editor.html">Context Router Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/side_panel_editor.html">Side Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/hiding_unused_panels.html">Hiding Unused Panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/interactive_panels.html">Interactive Panels and Extend Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/ui_customization.html">UI Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_menu.html">Capture Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/custom_icons.html">Custom Icons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/settings.html">Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../command_text.html">Writing and Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting.html">Scripting Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../script_management.html">Managing Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundled_utilities.html">Bundled Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_browser.html">Context Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Authoring API</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Overview</a><input aria-label="Toggle navigation of Overview" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Results and guards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slots.html">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout.html">Layout rows and panels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Menu type settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hotkeys.html">Hotkeys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property.html">Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property_stack.html">Property Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="router.html">Context Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export_validate.html">Export and validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html">Execution, user properties and identity</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="recipes/index.html">Recipes</a><input aria-label="Toggle navigation of Recipes" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="recipes/layout_build_panel_rows.html">Build a panel row by row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/property_stack_new.html">Author a Property Stack and show its state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/property_switch.html">Turn a setting into a Property switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/router_add_branch.html">Add a Router branch and edit its condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/slots_link_child_menu.html">Link a child menu and keep its icon flags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keymap_guide.html">Choosing a Keymap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keymap_duplicates.html">Keymap Conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../poll_method.html">Poll Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file_locations.html">File Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boot_options.html">Boot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_options.html">Developer Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../original_author_videos.html">Video Tutorials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/faq.html#known-issues">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/get_support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/changelog.html">Change Log</a></li>
+</ul>
+
+</div>
+</div>
+<nav class="documentation-languages" aria-label="Language">
+  
+  <a href="results.html" lang="en" hreflang="en" aria-label="English" title="English" aria-current="true"><span aria-hidden="true">🇺🇸</span></a>
+  
+  <a href="../../ja/reference/authoring/results.html" lang="ja" hreflang="ja" aria-label="日本語" title="日本語"><span aria-hidden="true">🇯🇵</span></a>
+  
+</nav>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.documentation-languages a')];
+  const targets = links.map(link => link.getAttribute('href'));
+  function syncFragment() {
+    links.forEach((link, index) => { link.href = targets[index] + window.location.hash; });
+  }
+  syncFragment();
+  window.addEventListener('hashchange', syncFragment);
+})();
+</script>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/reference/authoring/results.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="results-and-guards">
+<span id="authoring-results"></span><h1>Results and guards<a class="headerlink" href="#results-and-guards" title="Link to this heading">¶</a></h1>
+<p>Every editing function of <code class="docutils literal notranslate"><span class="pre">pme.editing</span></code> returns a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. This page defines
+what those results share: <code class="docutils literal notranslate"><span class="pre">status</span></code> values, the guards that reject stale input,
+<code class="docutils literal notranslate"><span class="pre">dry_run</span></code>, diagnostic entries and exceptions. Keys that belong to one function
+are described with that function.</p>
+<p>The success, preview and stale-input values are named per operation.
+<a class="reference internal" href="#authoring-results-by-operation"><span class="std std-ref">Results by operation</span></a> lists them; a caller tests those values
+rather than one assumed spelling.</p>
+<section id="common-result-keys">
+<h2>Common result keys<a class="headerlink" href="#common-result-keys" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+<col style="width: 64.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p>str</p></td>
+<td><p>One of the values under <a class="reference internal" href="#authoring-results-status"><span class="std std-ref">Status values</span></a>. Present in every
+result.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> only when <code class="docutils literal notranslate"><span class="pre">status</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;committed&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dry_run</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> argument. Slot, layout and transfer results do not have
+this key.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pm_uid</span></code></p></td>
+<td><p>str</p></td>
+<td><p>The menu UID, in results of most operations on one menu.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">before</span></code>, <code class="docutils literal notranslate"><span class="pre">after</span></code></p></td>
+<td><p>dict or None</p></td>
+<td><p>Saved values read before and after the call. Shape and presence are
+described with each function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code></p></td>
+<td><p>dict</p></td>
+<td><p>The value to pass as <code class="docutils literal notranslate"><span class="pre">expected</span></code> to a later call, in operations whose
+guard is a snapshot (<a class="reference internal" href="#authoring-results-guards"><span class="std std-ref">Guards</span></a>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pending</span></code></p></td>
+<td><p>list</p></td>
+<td><p>Parts whose save was not attempted: slot UIDs, metadata field names or
+Property groups. An earlier step, such as an editor callback, can still
+have changed them. Pending does not mean unchanged.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">recovery</span></code></p></td>
+<td><p>dict, str or None</p></td>
+<td><p>Restore details after a failed write. Shape described with each
+function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code></p></td>
+<td><p>list[dict]</p></td>
+<td><p>Entries described under <a class="reference internal" href="#authoring-results-diagnostics"><span class="std std-ref">Diagnostics</span></a>. Present in
+every result.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="menus.html#pme.create_pm" title="pme.create_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">pme.create_pm()</span></code></a> returns a <code class="docutils literal notranslate"><span class="pre">PmCreationResult</span></code> object, not a dict:
+<code class="docutils literal notranslate"><span class="pre">accepted</span></code> (bool), <code class="docutils literal notranslate"><span class="pre">pm_uid</span></code> (str, empty when rejected) and <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code>
+(tuple of code strings). <code class="docutils literal notranslate"><span class="pre">refresh_failed</span></code> with <code class="docutils literal notranslate"><span class="pre">accepted</span></code> <code class="docutils literal notranslate"><span class="pre">True</span></code> means
+the menu was created and only the display refresh failed.</p>
+<p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a> and <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> also return per-slot
+<code class="docutils literal notranslate"><span class="pre">slots</span></code>, <code class="docutils literal notranslate"><span class="pre">side_effects</span></code> and <code class="docutils literal notranslate"><span class="pre">structure_changes</span></code>, described with
+<a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>.</p>
+</section>
+<section id="status-values">
+<span id="authoring-results-status"></span><h2>Status values<a class="headerlink" href="#status-values" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 78.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>The requested change is saved in memory, as read back after the editor’s
+normal normalization. For <a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>,
+<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> and <a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a>: at least one requested
+part was saved and none was rejected; single parts can be
+<code class="docutils literal notranslate"><span class="pre">unchanged</span></code>. When every part already has the requested value, the
+result is <code class="docutils literal notranslate"><span class="pre">unchanged</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">partial</span></code></p></td>
+<td><p>Part of the request was saved, then a later part was rejected or
+failed. The parts that were not attempted are in <code class="docutils literal notranslate"><span class="pre">pending</span></code>. Returned
+only by <a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>,
+<a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a> and <a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dry_run=True</span></code> and the request passes every check. Nothing was
+written.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ready</span></code></p></td>
+<td><p>The same as <code class="docutils literal notranslate"><span class="pre">validated</span></code>, returned by <a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a> and
+<a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p>The request already matches the saved values. Nothing was written.
+Router and Property Stack dry runs return <code class="docutils literal notranslate"><span class="pre">validated</span></code> instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p>The requested change is not saved. <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> names the cause. A
+slot operation that ran an editor callback can still leave the
+callback’s changes, shown in <code class="docutils literal notranslate"><span class="pre">after</span></code> and <code class="docutils literal notranslate"><span class="pre">side_effects</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">restored_failure</span></code></p></td>
+<td><p>A write failed. The saved values were written back, and the readback
+matches the values from before the call. Blender registration is
+observed separately.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p>A write failed and the saved state could not be confirmed. The target
+is read again before any retry.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Entries inside a result have their own <code class="docutils literal notranslate"><span class="pre">status</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slots</span></code> entries (slot operations) and <code class="docutils literal notranslate"><span class="pre">fields</span></code> entries
+(<a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a>): <code class="docutils literal notranslate"><span class="pre">committed</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code> or <code class="docutils literal notranslate"><span class="pre">rejected</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">groups</span></code> entries (<a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>): <code class="docutils literal notranslate"><span class="pre">committed</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code> or <code class="docutils literal notranslate"><span class="pre">unknown</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">registration</span></code> (<a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a>):
+<code class="docutils literal notranslate"><span class="pre">registered</span></code>, <code class="docutils literal notranslate"><span class="pre">not_required</span></code>, <code class="docutils literal notranslate"><span class="pre">partial</span></code> or <code class="docutils literal notranslate"><span class="pre">unknown</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">visibility</span></code> (<a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a>): <code class="docutils literal notranslate"><span class="pre">observed</span></code> or <code class="docutils literal notranslate"><span class="pre">unknown</span></code>.</p></li>
+</ul>
+<p>Registration and visibility are observations of Blender’s current state, not
+the outcome of the operation.</p>
+<section id="what-a-committed-status-covers">
+<h3>What a committed status covers<a class="headerlink" href="#what-a-committed-status-covers" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The saved definition in memory. Preferences are not saved to disk
+(<a class="reference internal" href="concepts.html#authoring-concepts"><span class="std std-ref">Concepts</span></a>).</p></li>
+<li><p>Not display or action. Readback verifies the saved definition; display and
+actions are observed separately in the editor and mode the menu targets. For
+example, a committed Command slot that activates the Knife tool changes the
+active tool when run; it does not cut geometry by itself.</p></li>
+<li><p>Not the absence of problems. Diagnostics can accompany <code class="docutils literal notranslate"><span class="pre">committed</span></code>:
+normalization notes, warnings, or a saved definition that still needs
+attention.</p></li>
+<li><p>A refresh after the save can fail without undoing the commit. The failure
+is reported in <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> or in an exception note.</p></li>
+</ul>
+</section>
+</section>
+<section id="guards">
+<span id="authoring-results-guards"></span><h2>Guards<a class="headerlink" href="#guards" title="Link to this heading">¶</a></h2>
+<p>A guard compares the caller’s copy of the saved state with the current state
+before anything is written. A mismatch returns <code class="docutils literal notranslate"><span class="pre">status</span></code> <code class="docutils literal notranslate"><span class="pre">&quot;rejected&quot;</span></code> with
+the operation’s stale diagnostic, listed under
+<a class="reference internal" href="#authoring-results-by-operation"><span class="std std-ref">Results by operation</span></a>.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 40.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Compares</p></th>
+<th class="head"><p>Value comes from</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code></p></td>
+<td><p>The menu’s session-local version (int). Stale code <code class="docutils literal notranslate"><span class="pre">stale_version</span></code>,
+with <code class="docutils literal notranslate"><span class="pre">expected</span></code> and <code class="docutils literal notranslate"><span class="pre">actual</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;version&quot;]</span></code>, or <code class="docutils literal notranslate"><span class="pre">version</span></code> in an earlier slot or layout
+result.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code></p></td>
+<td><p>Saved values, in one of the three forms below.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()</span></code>, or <code class="docutils literal notranslate"><span class="pre">expected</span></code> in an earlier result.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code></p></td>
+<td><p>A hash (str) of the saved storage of a Router, Property Stack or
+Property.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;router&quot;][&quot;digest&quot;]</span></code>,
+<code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property_stack&quot;][&quot;digest&quot;]</span></code> or
+<code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property&quot;][&quot;digest&quot;]</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code> and <code class="docutils literal notranslate"><span class="pre">expected</span></code> are independent. <code class="docutils literal notranslate"><span class="pre">version</span></code> does not
+detect every raw Python write; <code class="docutils literal notranslate"><span class="pre">expected</span></code> compares the saved values and
+detects them.</p>
+<p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code> is accepted by <a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>,
+<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a>,
+<a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a> and the row, spacer and panel
+operations. <a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a> does not accept it.</p>
+<section id="forms-of-expected">
+<h3>Forms of <code class="docutils literal notranslate"><span class="pre">expected</span></code><a class="headerlink" href="#forms-of-expected" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 38.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Form</p></th>
+<th class="head"><p>Operations</p></th>
+<th class="head"><p>Rule</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Subset of saved values</p></td>
+<td><p><a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a> (metadata), <a class="reference internal" href="settings.html#pme.editing.update_settings" title="pme.editing.update_settings"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_settings()</span></code></a> (settings),
+<a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a> and <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> (slot UID to slot
+fields), <a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a> on menus other than Pop-up Dialog and
+Floating Panel (the slot’s fields)</p></td>
+<td><p>Any subset of the keys <code class="docutils literal notranslate"><span class="pre">read_pm()</span></code> returns for that part. A key whose
+value differs rejects the call. A key the saved values do not have is
+stale too, except in <a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a>, which raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>
+for an unknown field. <a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a> and
+<a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> raise <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> for a slot UID that is not
+being edited.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Complete saved values</p></td>
+<td><p><a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a> (exactly the 13 fields of
+<code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;hotkey&quot;]</span></code>), <a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a> (every requested UID
+mapped to its saved bool)</p></td>
+<td><p>Missing or extra keys raise <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Snapshot from an earlier call</p></td>
+<td><p><a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a>; <a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>,
+<a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a> and the row, spacer and panel operations on a
+Pop-up Dialog or Floating Panel; <a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a>,
+<a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.duplicate_pm" title="pme.editing.duplicate_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">duplicate_pm()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">result[&quot;expected&quot;]</span></code> from an earlier call, usually the dry run, passed
+back unchanged. Any difference rejects the call.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a> and <a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a> raise <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> for
+<code class="docutils literal notranslate"><span class="pre">expected</span></code> on menus other than Pop-up Dialog and Floating Panel.</p>
+</section>
+</section>
+<section id="dry-run">
+<span id="authoring-results-dry-run"></span><h2><code class="docutils literal notranslate"><span class="pre">dry_run</span></code><a class="headerlink" href="#dry-run" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dry_run=True</span></code> runs the checks of the real call against the current saved
+values and writes nothing. Saved values, versions and UIDs stay as they were;
+editor hooks and refresh do not run.</p></li>
+<li><p>An accepted dry run returns <code class="docutils literal notranslate"><span class="pre">validated</span></code> (<code class="docutils literal notranslate"><span class="pre">ready</span></code> for
+<a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a> and <a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a>), or <code class="docutils literal notranslate"><span class="pre">unchanged</span></code> where
+<a class="reference internal" href="#authoring-results-by-operation"><span class="std std-ref">Results by operation</span></a> lists it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">before</span></code> and <code class="docutils literal notranslate"><span class="pre">after</span></code>, where present, report saved values, not a
+prediction. A predicted
+value, where returned, is <code class="docutils literal notranslate"><span class="pre">proposed</span></code> (<a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a>) or
+<code class="docutils literal notranslate"><span class="pre">candidate</span></code> (<a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>, Router and Property Stack
+operations).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">expected</span></code> of a dry run can be passed to the applying call.</p></li>
+<li><p>The applying call resolves the UIDs and repeats every check. <code class="docutils literal notranslate"><span class="pre">validated</span></code>
+does not reserve success and does not test editor hooks, refresh or Blender
+registration.</p></li>
+<li><p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a> and <a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a> have
+no <code class="docutils literal notranslate"><span class="pre">dry_run</span></code>.</p></li>
+</ul>
+</section>
+<section id="results-by-operation">
+<span id="authoring-results-by-operation"></span><h2>Results by operation<a class="headerlink" href="#results-by-operation" title="Link to this heading">¶</a></h2>
+<p><em>Other statuses</em> lists the values besides the committed and dry-run values.
+<em>Guard inputs</em> gives the guard parameters and the stale diagnostic code.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 11.0%" />
+<col style="width: 14.0%" />
+<col style="width: 21.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Committed</p></th>
+<th class="head"><p>Accepted dry run</p></th>
+<th class="head"><p>Other statuses</p></th>
+<th class="head"><p>Guard inputs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.create_pm" title="pme.create_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">pme.create_pm()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">accepted</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> (object, not a dict)</p></td>
+<td><p>none</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">accepted</span></code> <code class="docutils literal notranslate"><span class="pre">False</span></code> with <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code></p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>no <code class="docutils literal notranslate"><span class="pre">dry_run</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">partial</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>; <code class="docutils literal notranslate"><span class="pre">expected</span></code> (slot UID to subset of slot fields).
+<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>, <code class="docutils literal notranslate"><span class="pre">stale_slot</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>no <code class="docutils literal notranslate"><span class="pre">dry_run</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">partial</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (subset of the metadata). <code class="docutils literal notranslate"><span class="pre">stale_metadata</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="settings.html#pme.editing.update_settings" title="pme.editing.update_settings"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_settings()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (subset of the settings). <code class="docutils literal notranslate"><span class="pre">stale_settings</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ready</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (all 13 hotkey fields). <code class="docutils literal notranslate"><span class="pre">stale_hotkey</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (UID to saved bool, every target).
+<code class="docutils literal notranslate"><span class="pre">pm_availability_expected_mismatch</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>; <code class="docutils literal notranslate"><span class="pre">unchanged</span></code> for an empty request</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot). <code class="docutils literal notranslate"><span class="pre">tag_expected_stale</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="menus.html#pme.editing.duplicate_pm" title="pme.editing.duplicate_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">duplicate_pm()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot). <code class="docutils literal notranslate"><span class="pre">pm_duplicate_stale_expected</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ready</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot). <code class="docutils literal notranslate"><span class="pre">pm_remove_saved_state_stale</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="menus.html#pme.editing.read_pm" title="pme.editing.read_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_pm()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.read_slot_inputs" title="pme.editing.read_slot_inputs"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_slot_inputs()</span></code></a>,
+<a class="reference internal" href="slots.html#pme.editing.slot_fields" title="pme.editing.slot_fields"><code class="xref py py-func docutils literal notranslate"><span class="pre">slot_fields()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.resolve_auto_icons" title="pme.editing.resolve_auto_icons"><code class="xref py py-func docutils literal notranslate"><span class="pre">resolve_auto_icons()</span></code></a>,
+<a class="reference internal" href="settings.html#pme.editing.setting_fields" title="pme.editing.setting_fields"><code class="xref py py-func docutils literal notranslate"><span class="pre">setting_fields()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.find_references" title="pme.editing.find_references"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_references()</span></code></a></p></td>
+<td><p>Read-only: no <code class="docutils literal notranslate"><span class="pre">status</span></code>, nothing is written</p></td>
+<td><p>none</p></td>
+<td><p>none</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>; on a Pop-up Dialog or Floating Panel also
+<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>; <code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot). <code class="docutils literal notranslate"><span class="pre">stale_version</span></code>,
+<code class="docutils literal notranslate"><span class="pre">stale_snapshot</span></code>, <code class="docutils literal notranslate"><span class="pre">stale_popup</span></code> (Pop-up)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>; on a Pop-up Dialog or Floating Panel also
+<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>; <code class="docutils literal notranslate"><span class="pre">expected</span></code> (the slot’s fields, or a snapshot on
+a Pop-up). <code class="docutils literal notranslate"><span class="pre">stale_version</span></code>, <code class="docutils literal notranslate"><span class="pre">stale_slot</span></code>, <code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>; on a Pop-up Dialog or Floating Panel also
+<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>; <code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot, Pop-up only).
+<code class="docutils literal notranslate"><span class="pre">stale_version</span></code>, <code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot); no <code class="docutils literal notranslate"><span class="pre">expected_version</span></code>. <code class="docutils literal notranslate"><span class="pre">stale_transfer</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="layout.html#pme.editing.add_row" title="pme.editing.add_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_row()</span></code></a>, <a class="reference internal" href="layout.html#pme.editing.add_panel" title="pme.editing.add_panel"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_panel()</span></code></a>, <a class="reference internal" href="layout.html#pme.editing.remove_row" title="pme.editing.remove_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_row()</span></code></a>,
+<a class="reference internal" href="layout.html#pme.editing.split_row" title="pme.editing.split_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">split_row()</span></code></a>, <a class="reference internal" href="layout.html#pme.editing.join_rows" title="pme.editing.join_rows"><code class="xref py py-func docutils literal notranslate"><span class="pre">join_rows()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>; <code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot). <code class="docutils literal notranslate"><span class="pre">stale_version</span></code>,
+<code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="layout.html#pme.editing.move_row" title="pme.editing.move_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_row()</span></code></a>, <a class="reference internal" href="layout.html#pme.editing.update_row" title="pme.editing.update_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_row()</span></code></a>, <a class="reference internal" href="layout.html#pme.editing.update_spacer" title="pme.editing.update_spacer"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_spacer()</span></code></a>,
+<a class="reference internal" href="layout.html#pme.editing.align_slot" title="pme.editing.align_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">align_slot()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_version</span></code>; <code class="docutils literal notranslate"><span class="pre">expected</span></code> (snapshot). <code class="docutils literal notranslate"><span class="pre">stale_version</span></code>,
+<code class="docutils literal notranslate"><span class="pre">stale_popup</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">partial</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>,
+<code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>. <code class="docutils literal notranslate"><span class="pre">stale_property</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="router.html#pme.editing.remove_router_branch" title="pme.editing.remove_router_branch"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_router_branch()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>. <code class="docutils literal notranslate"><span class="pre">stale_router_digest</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="router.html#pme.editing.update_router" title="pme.editing.update_router"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_router()</span></code></a>, <a class="reference internal" href="router.html#pme.editing.move_router_branch" title="pme.editing.move_router_branch"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_router_branch()</span></code></a>,
+<a class="reference internal" href="router.html#pme.editing.reorder_router_branches" title="pme.editing.reorder_router_branches"><code class="xref py py-func docutils literal notranslate"><span class="pre">reorder_router_branches()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>. <code class="docutils literal notranslate"><span class="pre">stale_router_digest</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="property_stack.html#pme.editing.update_property_stack" title="pme.editing.update_property_stack"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property_stack()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>. <code class="docutils literal notranslate"><span class="pre">stale_property_stack_digest</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="property_stack.html#pme.editing.add_property_stack_row" title="pme.editing.add_property_stack_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_property_stack_row()</span></code></a>,
+<a class="reference internal" href="property_stack.html#pme.editing.update_property_stack_row" title="pme.editing.update_property_stack_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property_stack_row()</span></code></a>,
+<a class="reference internal" href="property_stack.html#pme.editing.remove_property_stack_row" title="pme.editing.remove_property_stack_row"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_property_stack_row()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>. <code class="docutils literal notranslate"><span class="pre">stale_property_stack_digest</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="property_stack.html#pme.editing.update_property_stack_hud" title="pme.editing.update_property_stack_hud"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property_stack_hud()</span></code></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code>, <code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code>, <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, <code class="docutils literal notranslate"><span class="pre">restored_failure</span></code>, <code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code> (subset of <code class="docutils literal notranslate"><span class="pre">while_true_hud</span></code>). <code class="docutils literal notranslate"><span class="pre">stale_property_stack_hud</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="diagnostics">
+<span id="authoring-results-diagnostics"></span><h2>Diagnostics<a class="headerlink" href="#diagnostics" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> is a list of dicts. Every entry has <code class="docutils literal notranslate"><span class="pre">code</span></code>; the other keys
+depend on the entry.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 30.0%" />
+<col style="width: 48.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Present in</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
+<td><p>every entry</p></td>
+<td><p>Machine-readable identifier, such as <code class="docutils literal notranslate"><span class="pre">stale_settings</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">message</span></code></p></td>
+<td><p>most entries</p></td>
+<td><p>Human-readable description.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">field</span></code> / <code class="docutils literal notranslate"><span class="pre">fields</span></code></p></td>
+<td><p>entries about named inputs</p></td>
+<td><p>The input name, or a list of names. Stale guards list the differing
+names in <code class="docutils literal notranslate"><span class="pre">fields</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pmi_uid</span></code></p></td>
+<td><p>slot operations</p></td>
+<td><p>The slot the entry concerns.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
+<td><p>Router and Property Stack operations</p></td>
+<td><p>Location in the input or logic, such as
+<code class="docutils literal notranslate"><span class="pre">logic.branches[0].target</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">severity</span></code></p></td>
+<td><p>some entries</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;error&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;warning&quot;</span></code>. Property Stack entries always have it.
+Elsewhere it marks warnings, such as hotkey collisions, references
+left after a deletion and unresolved Router menu targets.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">exception_type</span></code></p></td>
+<td><p>entries for a caught exception</p></td>
+<td><p>Class name of the exception. The traceback is printed to Blender’s
+console.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">phase</span></code></p></td>
+<td><p><a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a></p></td>
+<td><p>The step that produced the entry, such as <code class="docutils literal notranslate"><span class="pre">preflight</span></code> or
+<code class="docutils literal notranslate"><span class="pre">readback</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expected</span></code>, <code class="docutils literal notranslate"><span class="pre">actual</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stale_version</span></code></p></td>
+<td><p>The supplied and the current version.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">line</span></code>, <code class="docutils literal notranslate"><span class="pre">column</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">invalid_syntax</span></code> (slot operations)</p></td>
+<td><p>Location of the syntax error in the submitted text. The text is not
+stripped or reindented before the check.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>A diagnostic does not mean failure by itself. <code class="docutils literal notranslate"><span class="pre">status</span></code> decides; a
+<code class="docutils literal notranslate"><span class="pre">committed</span></code> result can carry diagnostics.</p></li>
+<li><p>Codes specific to a function are listed with that function.</p></li>
+</ul>
+</section>
+<section id="exceptions">
+<span id="authoring-results-exceptions"></span><h2>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 46.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Exception</p></th>
+<th class="head"><p>Raised when</p></th>
+<th class="head"><p>Saved state</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code></p></td>
+<td><p>Called off Blender’s main thread, before PME finished loading, or
+without PME preferences (<a class="reference internal" href="concepts.html#authoring-concepts"><span class="std std-ref">Concepts</span></a>).</p></td>
+<td><p>Not touched.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code></p></td>
+<td><p>An argument has the wrong type, such as <code class="docutils literal notranslate"><span class="pre">changes</span></code> that is not a
+mapping or a <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> that is not a bool.</p></td>
+<td><p>Not written: raised before the first write.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></p></td>
+<td><p>An unknown field, an invalid value, conflicting arguments, or a menu UID
+that is missing, invalid or ambiguous.</p></td>
+<td><p>Not written: raised before the first write.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Any exception after writing started</p></td>
+<td><p>A write, editor callback, setter or refresh raised.</p></td>
+<td><p>Can be partly changed. The traceback is kept and a note is added.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>An editor or callback can also raise <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> or <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> after
+writing started. The exception class does not prove that nothing changed.
+The traceback and notes are kept, and the target is read again before any
+retry.</p></li>
+<li><p>The note is in the exception’s <code class="docutils literal notranslate"><span class="pre">__notes__</span></code> and is printed with the
+traceback. It names what was committed or what to read:</p>
+<ul>
+<li><p><a class="reference internal" href="slots.html#pme.editing.update_slots" title="pme.editing.update_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_slots()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.clear_slots" title="pme.editing.clear_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">clear_slots()</span></code></a>: the committed slot UIDs
+and the slot being saved.</p></li>
+<li><p><a class="reference internal" href="menus.html#pme.editing.update_pm" title="pme.editing.update_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_pm()</span></code></a>: the committed fields and the step that raised.</p></li>
+<li><p><a class="reference internal" href="hotkeys.html#pme.editing.update_hotkey" title="pme.editing.update_hotkey"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_hotkey()</span></code></a>: the saved readback, the changed fields and the
+registration readback.</p></li>
+<li><p><a class="reference internal" href="slots.html#pme.editing.add_slot" title="pme.editing.add_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_slot()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.remove_slot" title="pme.editing.remove_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_slot()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.move_slot" title="pme.editing.move_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">move_slot()</span></code></a>,
+<a class="reference internal" href="slots.html#pme.editing.swap_slots" title="pme.editing.swap_slots"><code class="xref py py-func docutils literal notranslate"><span class="pre">swap_slots()</span></code></a> on menus other than Pop-up Dialog and Floating
+Panel: the slot order before the call.</p></li>
+<li><p><a class="reference internal" href="property.html#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>: whether the saved definition was restored.</p></li>
+<li><p>Router and Property Stack operations: an instruction to read the menu
+before retrying; Property Stack notes also give the last reported status.</p></li>
+</ul>
+</li>
+<li><p>Router and Property Stack operations do not raise for malformed input. They
+return <code class="docutils literal notranslate"><span class="pre">rejected</span></code> with a diagnostic such as <code class="docutils literal notranslate"><span class="pre">dry_run_must_be_a_boolean</span></code>,
+<code class="docutils literal notranslate"><span class="pre">expected_digest_must_be_a_string</span></code> or <code class="docutils literal notranslate"><span class="pre">branches_must_be_a_sequence</span></code>.</p></li>
+<li><p><a class="reference internal" href="settings.html#pme.editing.update_settings" title="pme.editing.update_settings"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_settings()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.set_enabled" title="pme.editing.set_enabled"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_enabled()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a>,
+<a class="reference internal" href="menus.html#pme.editing.duplicate_pm" title="pme.editing.duplicate_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">duplicate_pm()</span></code></a>, <a class="reference internal" href="menus.html#pme.editing.delete_pms" title="pme.editing.delete_pms"><code class="xref py py-func docutils literal notranslate"><span class="pre">delete_pms()</span></code></a>, <a class="reference internal" href="slots.html#pme.editing.transfer_slot" title="pme.editing.transfer_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">transfer_slot()</span></code></a> and
+the slot and layout operations on a Pop-up Dialog or Floating Panel catch a
+failed write instead of raising. They print the traceback, return
+<code class="docutils literal notranslate"><span class="pre">restored_failure</span></code> or <code class="docutils literal notranslate"><span class="pre">unknown</span></code> (<a class="reference internal" href="menus.html#pme.editing.update_tags" title="pme.editing.update_tags"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_tags()</span></code></a>: <code class="docutils literal notranslate"><span class="pre">rejected</span></code> or
+<code class="docutils literal notranslate"><span class="pre">unknown</span></code>), and describe the failure in <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code>.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="menus.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Menus</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="concepts.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Concepts</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Pluglug and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Results and guards</a><ul>
+<li><a class="reference internal" href="#common-result-keys">Common result keys</a></li>
+<li><a class="reference internal" href="#status-values">Status values</a><ul>
+<li><a class="reference internal" href="#what-a-committed-status-covers">What a committed status covers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#guards">Guards</a><ul>
+<li><a class="reference internal" href="#forms-of-expected">Forms of <code class="docutils literal notranslate"><span class="pre">expected</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dry-run"><code class="docutils literal notranslate"><span class="pre">dry_run</span></code></a></li>
+<li><a class="reference internal" href="#results-by-operation">Results by operation</a></li>
+<li><a class="reference internal" href="#diagnostics">Diagnostics</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9caaf7ed"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
+    </body>
+</html>
