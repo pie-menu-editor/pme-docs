@@ -1,0 +1,1409 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Property Stack" href="property_stack.html"><link rel="prev" title="Hotkeys" href="hotkeys.html">
+        <link rel="canonical" href="https://docs.pie-menu-editor.com/reference/authoring/property.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
+        <title>Property - Pie Menu Editor 2.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=6b3a701d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/editor-overview.css?v=8fac9edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/hotkey-modes.css?v=682cae44" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0d82d0;
+  --color-brand-content: #0d82d0;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    (function () {
+        if (window.__PMEBeaconInitialized) {
+            return;
+        }
+
+        window.__PMEBeaconInitialized = true;
+
+        !function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+        window.Beacon('init', 'e458ab6a-6436-4e96-a0b6-038336504b24');
+        window.Beacon('config', {
+            display: {
+                style: 'manual'
+            }
+        });
+
+        window.PMEDocs = window.PMEDocs || {};
+        window.PMEDocs.beaconPrefillTemplates = {
+            supportRequest: [
+                'Summary:',
+                '- What went wrong?',
+                '',
+                'Steps to reproduce:',
+                '1.',
+                '2.',
+                '3.',
+                '',
+                'What happened:',
+                '- Describe the actual result.',
+                '',
+                'Environment:',
+                '- Blender version:',
+                '- PME version:',
+                '- OS:',
+                '',
+                'Attachments:',
+                '- PME setup JSON:',
+                '- Console output / screenshot:',
+                '- Small .blend file (if relevant):',
+                '',
+                'Additional notes:',
+                '- Anything else that may help.'
+            ].join('\n')
+        };
+
+        window.PMEDocs.openSupportBeacon = function (event, templateName) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            if (typeof window.Beacon === 'function') {
+                const prefillText = window.PMEDocs.beaconPrefillTemplates[templateName];
+                if (prefillText) {
+                    window.Beacon('prefill', {
+                        text: prefillText
+                    });
+                }
+
+                window.Beacon('open');
+                window.Beacon('navigate', '/ask/message/');
+                return false;
+            }
+
+            return true;
+        };
+
+        document.addEventListener('click', function (event) {
+            const trigger = event.target.closest('[data-beacon-open]');
+            if (!trigger) {
+                return;
+            }
+
+            window.PMEDocs.openSupportBeacon(event, trigger.dataset.beaconTemplate);
+        });
+    }());
+</script></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Pie Menu Editor 2.4 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">Pie Menu Editor 2.4 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/basic_pie_menu.html">Create Your First Pie Menu</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples &amp; Ideas</a><input aria-label="Toggle navigation of Examples &amp; Ideas" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting_workflow.html">Code Examples</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Editors</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/editor_common_elements.html">Common Editor Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hotkey_modes.html">Hotkey Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/pie_menu_editor.html">Pie Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/vector_menu_editor.html">Vector Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/regular_menu_editor.html">Regular Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/popup_dialog_editor.html">Pop-up Dialog Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/floating_panel_editor.html">Floating Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/sticky_key_editor.html">Sticky Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/stack_key_editor.html">Stack Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/macro_operator_editor.html">Macro Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/modal_operator_editor.html">Modal Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/property_editor.html">Property Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/property_stack_editor.html">Property Stack Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_router_editor.html">Context Router Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/side_panel_editor.html">Side Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/hiding_unused_panels.html">Hiding Unused Panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/interactive_panels.html">Interactive Panels and Extend Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/ui_customization.html">UI Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_menu.html">Capture Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/custom_icons.html">Custom Icons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/settings.html">Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../command_text.html">Writing and Running Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting.html">Scripting Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../script_management.html">Managing Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundled_utilities.html">Bundled Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/context_browser.html">Context Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Authoring API</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Overview</a><input aria-label="Toggle navigation of Overview" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Results and guards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="slots.html">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout.html">Layout rows and panels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Menu type settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hotkeys.html">Hotkeys</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="property_stack.html">Property Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="router.html">Context Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export_validate.html">Export and validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution.html">Execution, user properties and identity</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="recipes/index.html">Recipes</a><input aria-label="Toggle navigation of Recipes" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="recipes/layout_build_panel_rows.html">Build a panel row by row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/property_stack_new.html">Author a Property Stack and show its state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/property_switch.html">Turn a setting into a Property switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/router_add_branch.html">Add a Router branch and edit its condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipes/slots_link_child_menu.html">Link a child menu and keep its icon flags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../keymap_guide.html">Choosing a Keymap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../keymap_duplicates.html">Keymap Conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../poll_method.html">Poll Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../terminology.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file_locations.html">File Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boot_options.html">Boot Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_options.html">Developer Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../original_author_videos.html">Video Tutorials</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/faq.html#known-issues">Known Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/get_support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support_community/changelog.html">Change Log</a></li>
+</ul>
+
+</div>
+</div>
+<nav class="documentation-languages" aria-label="Language">
+  
+  <a href="property.html" lang="en" hreflang="en" aria-label="English" title="English" aria-current="true"><span aria-hidden="true">🇺🇸</span></a>
+  
+  <a href="../../ja/reference/authoring/property.html" lang="ja" hreflang="ja" aria-label="日本語" title="日本語"><span aria-hidden="true">🇯🇵</span></a>
+  
+</nav>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.documentation-languages a')];
+  const targets = links.map(link => link.getAttribute('href'));
+  function syncFragment() {
+    links.forEach((link, index) => { link.href = targets[index] + window.location.hash; });
+  }
+  syncFragment();
+  window.addEventListener('hashchange', syncFragment);
+})();
+</script>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/reference/authoring/property.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="property">
+<span id="authoring-property"></span><h1>Property<a class="headerlink" href="#property" title="Link to this heading">¶</a></h1>
+<p>A Property (menu type <code class="docutils literal notranslate"><span class="pre">PROPERTY</span></code>) defines one user property: its type,
+arguments, Enum items, callbacks, storage and Property ID. The definition is
+read and changed by field name. A Property Stack is described on
+<a class="reference internal" href="property_stack.html#authoring-property-stack"><span class="std std-ref">Property Stack</span></a>.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="menus.html#pme.editing.read_pm" title="pme.editing.read_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_pm()</span></code></a></p></td>
+<td><p>Returns the definition under <code class="docutils literal notranslate"><span class="pre">property</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a></p></td>
+<td><p>Changes the definition, storage and Property ID.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>See also: <a class="reference internal" href="recipes/property_switch.html#authoring-recipe-property-switch"><span class="std std-ref">Turn a setting into a Property switch</span></a>.</p>
+<section id="reading-a-property">
+<span id="authoring-property-read"></span><h2>Reading a Property<a class="headerlink" href="#reading-a-property" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">read_pm(pm_uid)[&quot;property&quot;]</span></code> is the definition under the field names that
+<a class="reference internal" href="#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a> accepts, plus <code class="docutils literal notranslate"><span class="pre">registered_property_id</span></code>, <code class="docutils literal notranslate"><span class="pre">digest</span></code>
+and <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code>. Only the fields that apply to the Property’s type and
+storage are present; see <a class="reference internal" href="#authoring-property-definition"><span class="std std-ref">Property definition</span></a>. Values are what
+the editor shows. Reading does not evaluate the Getter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pme</span><span class="o">.</span><span class="n">editing</span><span class="o">.</span><span class="n">read_pm</span><span class="p">(</span><span class="n">pm_uid</span><span class="p">)[</span><span class="s2">"property"</span><span class="p">]</span>
+<span class="go">{'type': 'BOOL', 'size': 1, 'default': False, 'expand': True,</span>
+<span class="go"> 'horizontal': True, 'restore_default': False, 'get': None, 'set': None,</span>
+<span class="go"> 'update': None, 'init': None, 'storage': None, 'property_id': 'my_toggle',</span>
+<span class="go"> 'property_id_locked': False, 'registered_property_id': 'my_toggle',</span>
+<span class="go"> 'digest': '42aaaef6...', 'diagnostics': []}</span>
+</pre></div>
+</div>
+<p>A new Property is a stored Boolean without callbacks.</p>
+<p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> lists problems in the saved definition:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></th>
+<th class="head"><p>Cause, and extra keys</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">callback_compile_error</span></code></p></td>
+<td><p>A saved callback has a syntax error. <code class="docutils literal notranslate"><span class="pre">field</span></code> names the callback;
+<code class="docutils literal notranslate"><span class="pre">severity</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;warning&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">argument_unreadable</span></code></p></td>
+<td><p>A saved argument is not a Python literal. <code class="docutils literal notranslate"><span class="pre">field</span></code> names the argument
+and <code class="docutils literal notranslate"><span class="pre">text</span></code> holds the saved text. The field shows the editor default
+instead.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="where-the-value-lives">
+<span id="authoring-property-value"></span><h2>Where the value lives<a class="headerlink" href="#where-the-value-lives" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">storage</span></code> decides who owns the value. <code class="docutils literal notranslate"><span class="pre">registered_property_id</span></code> is the name
+the Property is registered under.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 33.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">storage</span></code></p></th>
+<th class="head"><p>Value owner</p></th>
+<th class="head"><p>Read</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Addon Preferences. PME holds one value.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pme.props(registered_property_id)</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>An ID type name, such as <code class="docutils literal notranslate"><span class="pre">&quot;Object&quot;</span></code></p></td>
+<td><p>Each data-block of that type holds its own value, as an attribute named
+<code class="docutils literal notranslate"><span class="pre">registered_property_id</span></code>.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">getattr(data_block,</span> <span class="pre">registered_property_id)</span></code>. <code class="docutils literal notranslate"><span class="pre">pme.props()</span></code> does not
+hold this value: <code class="docutils literal notranslate"><span class="pre">pme.props(registered_property_id)</span></code> returns <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+or the value of a different Property that uses the same ID in Addon
+Preferences.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">pme</span><span class="o">.</span><span class="n">editing</span><span class="o">.</span><span class="n">read_pm</span><span class="p">(</span><span class="n">property_uid</span><span class="p">)[</span><span class="s2">"property"</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">prop</span><span class="p">[</span><span class="s2">"registered_property_id"</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">prop</span><span class="p">[</span><span class="s2">"storage"</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Addon Preferences: one value</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">pme</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"L.prop(props(), </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">)"</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># "Object": a value on each object</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">object</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"L.prop(C.object, </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">)"</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">registered_property_id</span></code> is empty while the Property is disabled. Property ID
+rules are listed under <a class="reference internal" href="../../editors/property_editor.html#property-id"><span class="std std-ref">Property ID and migration</span></a>.</p>
+</section>
+<section id="property-definition">
+<span id="authoring-property-definition"></span><h2>Property definition<a class="headerlink" href="#property-definition" title="Link to this heading">¶</a></h2>
+<p>The fields of <code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property&quot;]</span></code>. All except the last three are accepted
+by <a class="reference internal" href="#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a>. <em>Default</em> is the value the editor shows when the
+field was never set. The arguments <code class="docutils literal notranslate"><span class="pre">default</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code>,
+<code class="docutils literal notranslate"><span class="pre">precision</span></code>, <code class="docutils literal notranslate"><span class="pre">subtype</span></code> and <code class="docutils literal notranslate"><span class="pre">unit</span></code> are passed to Blender’s <code class="docutils literal notranslate"><span class="pre">bpy.props</span></code>
+function under the same names; <code class="docutils literal notranslate"><span class="pre">None</span></code> in <a class="reference internal" href="#pme.editing.update_property" title="pme.editing.update_property"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_property()</span></code></a> returns
+an argument to its default.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 13.0%" />
+<col style="width: 15.0%" />
+<col style="width: 20.0%" />
+<col style="width: 34.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Applies to</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p>str</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;BOOL&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;BOOL&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;INT&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;FLOAT&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;STRING&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;ENUM&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p>int</p></td>
+<td><p>BOOL, INT, FLOAT</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Property Size. 1 is a single value; 2 to 32 is a vector with that many
+components.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">default</span></code></p></td>
+<td><p>bool, int, float, str or list</p></td>
+<td><p>all</p></td>
+<td><p>BOOL <code class="docutils literal notranslate"><span class="pre">False</span></code>; INT and FLOAT <code class="docutils literal notranslate"><span class="pre">0</span></code>; STRING <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>; a vector: a list of
+<code class="docutils literal notranslate"><span class="pre">size</span></code> such values; ENUM: the first item’s identifier, <code class="docutils literal notranslate"><span class="pre">None</span></code>
+without items; Multi-Select: <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+<td><p>Default Value. A vector default is a list of exactly <code class="docutils literal notranslate"><span class="pre">size</span></code> values.
+An Enum default is one identifier. A Multi-Select default is a list,
+tuple or set of identifiers, read back as a sorted list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">min</span></code></p></td>
+<td><p>int or float</p></td>
+<td><p>INT, FLOAT</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-2147483648</span></code></p></td>
+<td><p>Min Value. A 32-bit integer for INT, a finite number for FLOAT.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">max</span></code></p></td>
+<td><p>int or float</p></td>
+<td><p>INT, FLOAT</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2147483647</span></code></p></td>
+<td><p>Max Value. Same rules as <code class="docutils literal notranslate"><span class="pre">min</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">step</span></code></p></td>
+<td><p>int or float</p></td>
+<td><p>INT, FLOAT</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code> (INT), <code class="docutils literal notranslate"><span class="pre">3</span></code> (FLOAT)</p></td>
+<td><p>Step. Same rules as <code class="docutils literal notranslate"><span class="pre">min</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">precision</span></code></p></td>
+<td><p>int</p></td>
+<td><p>FLOAT</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p>Precision, 0 to 6.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">subtype</span></code></p></td>
+<td><p>str</p></td>
+<td><p>INT, FLOAT, STRING</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></td>
+<td><p>Subtype. See <a class="reference internal" href="#authoring-property-subtypes"><span class="std std-ref">Subtype values</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">unit</span></code></p></td>
+<td><p>str</p></td>
+<td><p>FLOAT</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></td>
+<td><p>Unit. See <a class="reference internal" href="#authoring-property-units"><span class="std std-ref">Unit values</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">multiselect</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>ENUM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Multi-Select. The value is a set of identifiers.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expand</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>Expand.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">horizontal</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>BOOL, INT, FLOAT, ENUM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>Horizontal Layout.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">restore_default</span></code></p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">storage</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Restore Default Value. PME initialization discards the saved value and
+starts from <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">items</span></code></p></td>
+<td><p>list[dict]</p></td>
+<td><p>ENUM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+<td><p>Enum items in order. See <a class="reference internal" href="#authoring-property-items"><span class="std std-ref">Enum items</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get</span></code></p></td>
+<td><p>str or None</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Getter text. Its <code class="docutils literal notranslate"><span class="pre">return</span></code> gives the value. <code class="docutils literal notranslate"><span class="pre">None</span></code>: no Getter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set</span></code></p></td>
+<td><p>str or None</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>Setter text. Requires a Getter. <code class="docutils literal notranslate"><span class="pre">None</span></code>: no Setter.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">update</span></code></p></td>
+<td><p>str or None</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>On Update text. <code class="docutils literal notranslate"><span class="pre">None</span></code>: no On Update.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">init</span></code></p></td>
+<td><p>str or None</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>On Init text. <code class="docutils literal notranslate"><span class="pre">None</span></code>: no On Init.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">storage</span></code></p></td>
+<td><p>str or None</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code> for Addon Preferences, or a Blender ID type name such as
+<code class="docutils literal notranslate"><span class="pre">&quot;Object&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;Scene&quot;</span></code>. See <a class="reference internal" href="#authoring-property-value"><span class="std std-ref">Where the value lives</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">property_id</span></code></p></td>
+<td><p>str</p></td>
+<td><p>all</p></td>
+<td><p>Generated from the menu name</p></td>
+<td><p>Saved Property ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">property_id_locked</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>Lock. When <code class="docutils literal notranslate"><span class="pre">True</span></code>, the Property ID does not follow menu renames.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">registered_property_id</span></code></p></td>
+<td><p>str</p></td>
+<td><p>read only</p></td>
+<td></td>
+<td><p>Name the Property is registered under. Empty while the Property is
+disabled or not registered.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">digest</span></code></p></td>
+<td><p>str</p></td>
+<td><p>read only</p></td>
+<td></td>
+<td><p>Hex digest of the saved definition. Pass it as <code class="docutils literal notranslate"><span class="pre">expected_digest</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code></p></td>
+<td><p>list[dict]</p></td>
+<td><p>read only</p></td>
+<td></td>
+<td><p>Problems in the saved definition. See <a class="reference internal" href="#authoring-property-read"><span class="std std-ref">Reading a Property</span></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Callback variables are listed under <a class="reference internal" href="../../editors/property_editor.html#property-callbacks"><span class="std std-ref">Getter / Setter / On Update / On Init</span></a>.</p>
+<section id="enum-items">
+<span id="authoring-property-items"></span><h3>Enum items<a class="headerlink" href="#enum-items" title="Link to this heading">¶</a></h3>
+<p>Each entry of <code class="docutils literal notranslate"><span class="pre">items</span></code>:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 14.0%" />
+<col style="width: 68.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uid</span></code></p></td>
+<td><p>str</p></td>
+<td><p>UID of an existing item. On input, an existing UID keeps that item’s
+identity; omit it, or pass <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, for a new item.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">identifier</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Required. The value used in scripts. Non-empty, without spaces or
+<code class="docutils literal notranslate"><span class="pre">|</span></code>, and unique within the Property.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Display label. Without <code class="docutils literal notranslate"><span class="pre">|</span></code>. Omitted or empty: the identifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">icon</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Blender icon name. Omitted: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">items</span></code> replaces the Enum items in the given order. Enum values follow item
+order, as in the editor. An identifier cannot be <code class="docutils literal notranslate"><span class="pre">GET</span></code>, <code class="docutils literal notranslate"><span class="pre">SET</span></code>, <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">INIT</span></code>, <code class="docutils literal notranslate"><span class="pre">CLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">default</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code>, <code class="docutils literal notranslate"><span class="pre">precision</span></code>,
+<code class="docutils literal notranslate"><span class="pre">subtype</span></code> or <code class="docutils literal notranslate"><span class="pre">unit</span></code>. A Multi-Select Enum holds at most 31 items.</p>
+</section>
+<section id="subtype-values">
+<span id="authoring-property-subtypes"></span><h3>Subtype values<a class="headerlink" href="#subtype-values" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Accepted <code class="docutils literal notranslate"><span class="pre">subtype</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>INT or FLOAT, <code class="docutils literal notranslate"><span class="pre">size</span></code> 1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PIXEL</span></code>, <code class="docutils literal notranslate"><span class="pre">UNSIGNED</span></code>, <code class="docutils literal notranslate"><span class="pre">PERCENTAGE</span></code>, <code class="docutils literal notranslate"><span class="pre">FACTOR</span></code>, <code class="docutils literal notranslate"><span class="pre">ANGLE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">TIME</span></code>, <code class="docutils literal notranslate"><span class="pre">TIME_ABSOLUTE</span></code>, <code class="docutils literal notranslate"><span class="pre">DISTANCE</span></code>, <code class="docutils literal notranslate"><span class="pre">DISTANCE_CAMERA</span></code>,
+<code class="docutils literal notranslate"><span class="pre">POWER</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span></code>, <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>INT or FLOAT, <code class="docutils literal notranslate"><span class="pre">size</span></code> 2 to 32</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">COLOR</span></code>, <code class="docutils literal notranslate"><span class="pre">TRANSLATION</span></code>, <code class="docutils literal notranslate"><span class="pre">DIRECTION</span></code>, <code class="docutils literal notranslate"><span class="pre">VELOCITY</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ACCELERATION</span></code>, <code class="docutils literal notranslate"><span class="pre">MATRIX</span></code>, <code class="docutils literal notranslate"><span class="pre">EULER</span></code>, <code class="docutils literal notranslate"><span class="pre">QUATERNION</span></code>, <code class="docutils literal notranslate"><span class="pre">AXISANGLE</span></code>,
+<code class="docutils literal notranslate"><span class="pre">XYZ</span></code>, <code class="docutils literal notranslate"><span class="pre">XYZ_LENGTH</span></code>, <code class="docutils literal notranslate"><span class="pre">COLOR_GAMMA</span></code>, <code class="docutils literal notranslate"><span class="pre">COORDINATES</span></code>, <code class="docutils literal notranslate"><span class="pre">LAYER</span></code>,
+<code class="docutils literal notranslate"><span class="pre">LAYER_MEMBER</span></code>, <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>STRING</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FILE_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">DIR_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">FILE_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">BYTE_STRING</span></code>,
+<code class="docutils literal notranslate"><span class="pre">PASSWORD</span></code>, <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="unit-values">
+<span id="authoring-property-units"></span><h3>Unit values<a class="headerlink" href="#unit-values" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">unit</span></code> accepts the identifiers of Blender’s <code class="docutils literal notranslate"><span class="pre">FloatProperty.unit</span></code>. Blender
+5.2 has <code class="docutils literal notranslate"><span class="pre">NONE</span></code>, <code class="docutils literal notranslate"><span class="pre">LENGTH</span></code>, <code class="docutils literal notranslate"><span class="pre">AREA</span></code>, <code class="docutils literal notranslate"><span class="pre">VOLUME</span></code>, <code class="docutils literal notranslate"><span class="pre">ROTATION</span></code>, <code class="docutils literal notranslate"><span class="pre">TIME</span></code>,
+<code class="docutils literal notranslate"><span class="pre">TIME_ABSOLUTE</span></code>, <code class="docutils literal notranslate"><span class="pre">VELOCITY</span></code>, <code class="docutils literal notranslate"><span class="pre">ACCELERATION</span></code>, <code class="docutils literal notranslate"><span class="pre">MASS</span></code>, <code class="docutils literal notranslate"><span class="pre">CAMERA</span></code>,
+<code class="docutils literal notranslate"><span class="pre">POWER</span></code>, <code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span></code>, <code class="docutils literal notranslate"><span class="pre">WAVELENGTH</span></code>, <code class="docutils literal notranslate"><span class="pre">COLOR_TEMPERATURE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">FREQUENCY</span></code>. The list is read from the running Blender.</p>
+</section>
+</section>
+<section id="reset-rules">
+<span id="authoring-property-reset-rules"></span><h2>Reset rules<a class="headerlink" href="#reset-rules" title="Link to this heading">¶</a></h2>
+<p>The editor’s own rules apply, in this order. Values supplied in the same call
+are applied after these resets.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24.0%" />
+<col style="width: 76.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Change</p></th>
+<th class="head"><p>Effect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">size</span></code> becomes 1, <code class="docutils literal notranslate"><span class="pre">multiselect</span></code> <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">horizontal</span></code> <code class="docutils literal notranslate"><span class="pre">True</span></code>
+and <code class="docutils literal notranslate"><span class="pre">items</span></code> <code class="docutils literal notranslate"><span class="pre">[]</span></code>. <code class="docutils literal notranslate"><span class="pre">default</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code>,
+<code class="docutils literal notranslate"><span class="pre">precision</span></code>, <code class="docutils literal notranslate"><span class="pre">subtype</span></code> and <code class="docutils literal notranslate"><span class="pre">unit</span></code> return to the editor defaults of
+the new type. Callbacks, <code class="docutils literal notranslate"><span class="pre">expand</span></code>, <code class="docutils literal notranslate"><span class="pre">restore_default</span></code>, <code class="docutils literal notranslate"><span class="pre">storage</span></code>
+and the Property ID are kept.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">items</span></code></p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">default</span></code> that was never set, or that names the old first item,
+follows the new first item. A <code class="docutils literal notranslate"><span class="pre">default</span></code> that names a removed
+identifier is rejected with <code class="docutils literal notranslate"><span class="pre">default_not_in_items</span></code> unless <code class="docutils literal notranslate"><span class="pre">default</span></code>
+is also given.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">multiselect</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">default</span></code> returns to the editor default: <code class="docutils literal notranslate"><span class="pre">[]</span></code> when on, the first
+item when off.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">subtype</span></code> and <code class="docutils literal notranslate"><span class="pre">unit</span></code> become <code class="docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code>. <code class="docutils literal notranslate"><span class="pre">default</span></code> is cut or padded
+to the new size; size 1 keeps the first component.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pme.editing.update_property">
+<span class="sig-prename descclassname"><span class="pre">pme.editing.</span></span><span class="sig-name descname"><span class="pre">update_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pm_uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changes</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_digest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pme.editing.update_property" title="Link to this definition">¶</a></dt>
+<dd><p>Change a Property’s definition, storage and Property ID as its editor does.</p>
+<p>All changes are checked before the first write. If any is rejected, nothing
+is written. The changes are then saved in three groups, in a fixed order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pm_uid</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>) – UID of the Property.</p></li>
+<li><p><strong>changes</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><em>dict</em></a>) – Field name mapped to its new value. Field names are
+those of <a class="reference internal" href="#authoring-property-definition"><span class="std std-ref">Property definition</span></a>, except the read-only ones.
+Partial: fields that are not named keep their values, apart from the
+<a class="reference internal" href="#authoring-property-reset-rules"><span class="std std-ref">Reset rules</span></a>. <code class="docutils literal notranslate"><span class="pre">None</span></code> returns an argument to
+the editor default and removes a callback.</p></li>
+<li><p><strong>expected_digest</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a><em> or </em><em>None</em>) – <code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property&quot;][&quot;digest&quot;]</span></code>. The update is
+rejected with <code class="docutils literal notranslate"><span class="pre">stale_property</span></code> when the saved Property has changed.</p></li>
+<li><p><strong>dry_run</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><em>bool</em></a>) – Check the changes and return without writing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result described below.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)">dict</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#TypeError" title="(in Python v3.15)"><strong>TypeError</strong></a> – <code class="docutils literal notranslate"><span class="pre">changes</span></code> is not a mapping; <code class="docutils literal notranslate"><span class="pre">multiselect</span></code>,
+<code class="docutils literal notranslate"><span class="pre">expand</span></code>, <code class="docutils literal notranslate"><span class="pre">horizontal</span></code>, <code class="docutils literal notranslate"><span class="pre">restore_default</span></code> or
+<code class="docutils literal notranslate"><span class="pre">property_id_locked</span></code> is not a bool; a callback is not a string or
+<code class="docutils literal notranslate"><span class="pre">None</span></code>; <code class="docutils literal notranslate"><span class="pre">property_id</span></code> is not a string; <code class="docutils literal notranslate"><span class="pre">storage</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>
+or a non-empty string; <code class="docutils literal notranslate"><span class="pre">items</span></code> is not a sequence of mappings, an item’s
+<code class="docutils literal notranslate"><span class="pre">identifier</span></code> is not a string, or its <code class="docutils literal notranslate"><span class="pre">uid</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code> or <code class="docutils literal notranslate"><span class="pre">icon</span></code> is
+not a string or <code class="docutils literal notranslate"><span class="pre">None</span></code>; <code class="docutils literal notranslate"><span class="pre">expected_digest</span></code> is not a string or
+<code class="docutils literal notranslate"><span class="pre">None</span></code>; <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> is not a bool.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><strong>ValueError</strong></a> – A field name is unknown; <code class="docutils literal notranslate"><span class="pre">type</span></code> is not one of the
+five types; <code class="docutils literal notranslate"><span class="pre">size</span></code> is not an integer from 1 to 32; an item has a key
+other than <code class="docutils literal notranslate"><span class="pre">uid</span></code>, <code class="docutils literal notranslate"><span class="pre">identifier</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">icon</span></code>; the UID is
+missing, invalid or ambiguous; the menu is not a Property.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#RuntimeError" title="(in Python v3.15)"><strong>RuntimeError</strong></a> – The call is not on Blender’s main thread, PME has not
+finished loading, or PME preferences are unavailable.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Groups</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 40.0%" />
+<col style="width: 42.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></th>
+<th class="head"><p>Runs when</p></th>
+<th class="head"><p>Saved through</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">storage</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">storage</span></code> differs from the saved value.</p></td>
+<td><p>The editor’s storage setting. It can choose a new Property ID for
+the destination storage.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">property_id</span></code></p></td>
+<td><p>The saved Property ID or lock differs from the requested one,
+including an ID the storage group chose.</p></td>
+<td><p>The editor’s Edit Property ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">definition</span></code></p></td>
+<td><p>Any other field differs from the saved value.</p></td>
+<td><p>The editor’s fields, then one registration with Blender.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each group leaves a complete Property. <code class="docutils literal notranslate"><span class="pre">groups</span></code> lists the groups that ran
+and <code class="docutils literal notranslate"><span class="pre">pending</span></code> the groups that did not.</p>
+<p class="rubric">Result</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 14.0%" />
+<col style="width: 64.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p>str</p></td>
+<td><p>See <em>Status</em> below.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>bool</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code> only when <code class="docutils literal notranslate"><span class="pre">status</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;committed&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dry_run</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pm_uid</span></code></p></td>
+<td><p>str</p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">pm_uid</span></code> argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">before</span></code></p></td>
+<td><p>dict</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property&quot;]</span></code> before the call.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">after</span></code></p></td>
+<td><p>dict</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;property&quot;]</span></code> after the call. Equal to <code class="docutils literal notranslate"><span class="pre">before</span></code> unless
+something was written.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">candidate</span></code></p></td>
+<td><p>dict or None</p></td>
+<td><p>The definition to save, with <code class="docutils literal notranslate"><span class="pre">storage</span></code>, <code class="docutils literal notranslate"><span class="pre">property_id</span></code> and
+<code class="docutils literal notranslate"><span class="pre">property_id_locked</span></code>. <code class="docutils literal notranslate"><span class="pre">None</span></code> when the changes are rejected.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">changed_fields</span></code></p></td>
+<td><p>list[str]</p></td>
+<td><p>Field names whose value differs between <code class="docutils literal notranslate"><span class="pre">before</span></code> and <code class="docutils literal notranslate"><span class="pre">after</span></code>.
+Empty after a dry run.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">groups</span></code></p></td>
+<td><p>list[dict]</p></td>
+<td><p>One entry per group that ran: <code class="docutils literal notranslate"><span class="pre">group</span></code> and <code class="docutils literal notranslate"><span class="pre">status</span></code>
+(<code class="docutils literal notranslate"><span class="pre">&quot;committed&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;rejected&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;restored_failure&quot;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">&quot;unknown&quot;</span></code>). Empty after a dry run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pending</span></code></p></td>
+<td><p>list[str]</p></td>
+<td><p>Groups that need to run and did not. After a dry run, the groups
+that would run.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">registration</span></code></p></td>
+<td><p>dict or None</p></td>
+<td><p>Set when the <code class="docutils literal notranslate"><span class="pre">definition</span></code> group ran. See <em>Registration</em> below.
+The <code class="docutils literal notranslate"><span class="pre">storage</span></code> and <code class="docutils literal notranslate"><span class="pre">property_id</span></code> groups register the Property
+too; after any group, <code class="docutils literal notranslate"><span class="pre">after[&quot;storage&quot;]</span></code> and
+<code class="docutils literal notranslate"><span class="pre">after[&quot;registered_property_id&quot;]</span></code> give where and under which
+name it is registered.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">recovery</span></code></p></td>
+<td><p>dict or None</p></td>
+<td><p>Set after a failed group: <code class="docutils literal notranslate"><span class="pre">scope</span></code> (the group) and
+<code class="docutils literal notranslate"><span class="pre">saved_definition_matches</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code></p></td>
+<td><p>list[dict]</p></td>
+<td><p>One entry per problem: <code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">field</span></code> (or <code class="docutils literal notranslate"><span class="pre">fields</span></code>) and
+<code class="docutils literal notranslate"><span class="pre">message</span></code>, plus the details listed under <em>Diagnostics</em>. Warnings
+also have <code class="docutils literal notranslate"><span class="pre">severity:</span> <span class="pre">&quot;warning&quot;</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Registration</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 10.0%" />
+<col style="width: 64.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;committed&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;failed&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;not_applicable&quot;</span></code> while the
+Property is disabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">registered_property_id</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Name the Property is registered under. Empty when not registered.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reason_code</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Empty on success. <code class="docutils literal notranslate"><span class="pre">property_disabled</span></code> for a disabled Property.
+Otherwise the code of the failed step, such as
+<code class="docutils literal notranslate"><span class="pre">host_registration_failed</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">failed_stage</span></code></p></td>
+<td><p>str</p></td>
+<td><p>Empty on success. Otherwise the failed step: <code class="docutils literal notranslate"><span class="pre">validate</span></code>,
+<code class="docutils literal notranslate"><span class="pre">claim</span></code>, <code class="docutils literal notranslate"><span class="pre">resolve_owner</span></code>, <code class="docutils literal notranslate"><span class="pre">prepare_metadata</span></code>,
+<code class="docutils literal notranslate"><span class="pre">inspect_native</span></code>, <code class="docutils literal notranslate"><span class="pre">migrate</span></code>, <code class="docutils literal notranslate"><span class="pre">migrate_native</span></code>,
+<code class="docutils literal notranslate"><span class="pre">prepare_cleanup</span></code>, <code class="docutils literal notranslate"><span class="pre">register_new</span></code>, <code class="docutils literal notranslate"><span class="pre">commit_ownership</span></code>,
+<code class="docutils literal notranslate"><span class="pre">publish</span></code> or <code class="docutils literal notranslate"><span class="pre">commit_metadata</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">blocked_owner</span></code></p></td>
+<td><p>str</p></td>
+<td><p>The data-block that blocked moving a stored value, such as
+<code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">'Cube'</span></code>. Empty otherwise.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Status</p>
+<p>The shared vocabulary is under <a class="reference internal" href="results.html#authoring-results-status"><span class="std std-ref">Status values</span></a>.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24.0%" />
+<col style="width: 76.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">committed</span></code></p></td>
+<td><p>Every group that needed to run is saved.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validated</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dry_run=True</span></code> and the changes are acceptable. Nothing was
+written.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">unchanged</span></code></p></td>
+<td><p>The changes match the saved Property. Nothing was written. Also
+returned by a dry run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rejected</span></code></p></td>
+<td><p>The saved Property is unchanged. <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> names the cause:
+a check, or the failure of the first group that ran.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">partial</span></code></p></td>
+<td><p>A group failed after an earlier group committed. The earlier group
+stays saved; <code class="docutils literal notranslate"><span class="pre">pending</span></code> lists the groups that did not run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">restored_failure</span></code></p></td>
+<td><p>Blender refused to register the saved definition, and the saved
+definition was restored.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">unknown</span></code></p></td>
+<td><p>A failed group left the saved Property changed, or the restore could
+not be confirmed. <code class="docutils literal notranslate"><span class="pre">recovery[&quot;scope&quot;]</span></code> names the group. Call
+<a class="reference internal" href="menus.html#pme.editing.read_pm" title="pme.editing.read_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_pm()</span></code></a> before retrying.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Diagnostics</p>
+<p><em>Rejects</em>: checked before the first write; the status is <code class="docutils literal notranslate"><span class="pre">rejected</span></code>.
+<em>Warning</em>: the status is unaffected. <em>Group</em>: a group failed during the
+write.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 12.0%" />
+<col style="width: 58.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></th>
+<th class="head"><p>Effect</p></th>
+<th class="head"><p>Cause, and extra keys</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stale_property</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">expected_digest</span></code> differs from the saved digest. <code class="docutils literal notranslate"><span class="pre">field</span></code> is
+<code class="docutils literal notranslate"><span class="pre">&quot;digest&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">field_not_applicable</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>The field does not apply to the resulting type, or
+<code class="docutils literal notranslate"><span class="pre">restore_default</span></code> is given for ID storage.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">default_type_mismatch</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">default</span></code> has the wrong type or, for a vector, the wrong length.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">default_not_in_items</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">default</span></code>, given or kept, names an identifier the items do not
+have. <code class="docutils literal notranslate"><span class="pre">missing</span></code> lists them.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">argument_type_mismatch</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code> or <code class="docutils literal notranslate"><span class="pre">step</span></code> is not an integer (INT) or a finite
+number (FLOAT), or <code class="docutils literal notranslate"><span class="pre">precision</span></code> is not an integer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">argument_out_of_range</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">precision</span></code> is an integer outside 0 to 6; an INT <code class="docutils literal notranslate"><span class="pre">default</span></code>,
+<code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code> or <code class="docutils literal notranslate"><span class="pre">step</span></code> is an integer outside the 32-bit range
+(-2147483648 to 2147483647); or a FLOAT <code class="docutils literal notranslate"><span class="pre">default</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>,
+<code class="docutils literal notranslate"><span class="pre">max</span></code> or <code class="docutils literal notranslate"><span class="pre">step</span></code> is a finite number outside the 32-bit float
+range (about ±3.4028235e38), which Blender would register as
+infinity. <code class="docutils literal notranslate"><span class="pre">field</span></code> names the field.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">argument_not_a_choice</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">subtype</span></code> or <code class="docutils literal notranslate"><span class="pre">unit</span></code> is not accepted for the type and size.
+<code class="docutils literal notranslate"><span class="pre">choices</span></code> lists the accepted values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">min_greater_than_max</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>The resulting <code class="docutils literal notranslate"><span class="pre">min</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">max</span></code>. <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code>
+give both values. Not checked when the other bound is unreadable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">multiselect_item_limit</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>A Multi-Select Enum would have more than 31 items. <code class="docutils literal notranslate"><span class="pre">limit</span></code> and
+<code class="docutils literal notranslate"><span class="pre">count</span></code> give the numbers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">item_identifier_invalid</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>An identifier is empty or contains a space or <code class="docutils literal notranslate"><span class="pre">|</span></code>. <code class="docutils literal notranslate"><span class="pre">index</span></code>
+names the item.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">item_identifier_duplicate</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>An identifier repeats an earlier one. <code class="docutils literal notranslate"><span class="pre">index</span></code> names the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">item_identifier_reserved</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>An identifier is a reserved entry name, listed under
+<a class="reference internal" href="#authoring-property-items"><span class="std std-ref">Enum items</span></a>. <code class="docutils literal notranslate"><span class="pre">index</span></code> names the item.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">item_name_invalid</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>A name contains <code class="docutils literal notranslate"><span class="pre">|</span></code>. <code class="docutils literal notranslate"><span class="pre">index</span></code> names the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">item_uid_duplicate</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>Two items give the same <code class="docutils literal notranslate"><span class="pre">uid</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">item_uid_unknown</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">uid</span></code> is not an item of this Property. <code class="docutils literal notranslate"><span class="pre">uids</span></code> lists them.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_requires_get</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>The result would have a Setter without a Getter.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">argument_unreadable_would_be_replaced</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>A saved argument that is not a literal would be replaced by a value
+the call did not name. <code class="docutils literal notranslate"><span class="pre">text</span></code> holds the saved text. Passing the
+argument explicitly replaces it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">storage_type_unknown</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">storage</span></code> is not a Blender ID type name.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">empty</span></code>, <code class="docutils literal notranslate"><span class="pre">too_long</span></code>, <code class="docutils literal notranslate"><span class="pre">invalid_identifier</span></code>, <code class="docutils literal notranslate"><span class="pre">non_ascii</span></code>,
+<code class="docutils literal notranslate"><span class="pre">python_keyword</span></code>, <code class="docutils literal notranslate"><span class="pre">reserved_access_name</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>The Property ID is empty, longer than 63 bytes, not an ASCII letter
+followed by letters, digits or <code class="docutils literal notranslate"><span class="pre">_</span></code>, non-ASCII, a Python keyword,
+or one of <code class="docutils literal notranslate"><span class="pre">keys</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">items</span></code>, <code class="docutils literal notranslate"><span class="pre">get</span></code>. Checked when
+<code class="docutils literal notranslate"><span class="pre">property_id</span></code> or <code class="docutils literal notranslate"><span class="pre">storage</span></code> changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">owner_reserved</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>The destination storage already has an attribute of that name,
+such as a Blender property or a property another Property
+registered.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manual_prop_id_collision</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>Another Property in the same storage saves that Property ID.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reserved</span></code></p></td>
+<td><p>Rejects</p></td>
+<td><p>The Property ID is reserved for another reason.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">callback_compile_error</span></code></p></td>
+<td><p>Warning</p></td>
+<td><p>A given callback has a syntax error. It is saved, as in the editor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">argument_unreadable</span></code></p></td>
+<td><p>Warning</p></td>
+<td><p>A saved argument that is not a literal is kept. <code class="docutils literal notranslate"><span class="pre">text</span></code> holds the
+saved text.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">property_readback_differs</span></code></p></td>
+<td><p>Warning</p></td>
+<td><p>After a commit, the saved Property differs from <code class="docutils literal notranslate"><span class="pre">candidate</span></code>.
+<code class="docutils literal notranslate"><span class="pre">fields</span></code> lists the names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">storage_registration_failed</span></code></p></td>
+<td><p>Group</p></td>
+<td><p>The storage group was not accepted. <code class="docutils literal notranslate"><span class="pre">message</span></code> joins the editor’s
+reports.</p></td>
+</tr>
+<tr class="row-even"><td><p>Code of the Property ID step</p></td>
+<td><p>Group</p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">property_id</span></code> group was not accepted. <code class="docutils literal notranslate"><span class="pre">code</span></code> is a Property
+ID code above, <code class="docutils literal notranslate"><span class="pre">runtime_prop_id_register_failed</span></code>, or the
+registration’s <code class="docutils literal notranslate"><span class="pre">reason_code</span></code>. <code class="docutils literal notranslate"><span class="pre">effect_codes</span></code> lists the steps run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">definition_registration_failed</span></code></p></td>
+<td><p>Group</p></td>
+<td><p>Blender refused to register the saved definition. <code class="docutils literal notranslate"><span class="pre">registration</span></code>
+holds the details.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Example</p>
+<p>Turn a new Property into a Float from 0 to 1 with a length unit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">created</span> <span class="o">=</span> <span class="n">pme</span><span class="o">.</span><span class="n">create_pm</span><span class="p">(</span><span class="n">pme</span><span class="o">.</span><span class="n">PmCreationSpec</span><span class="p">(</span><span class="s2">"PROPERTY"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"Bevel Width"</span><span class="p">))</span>
+<span class="n">before</span> <span class="o">=</span> <span class="n">pme</span><span class="o">.</span><span class="n">editing</span><span class="o">.</span><span class="n">read_pm</span><span class="p">(</span><span class="n">created</span><span class="o">.</span><span class="n">pm_uid</span><span class="p">)[</span><span class="s2">"property"</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pme</span><span class="o">.</span><span class="n">editing</span><span class="o">.</span><span class="n">update_property</span><span class="p">(</span>
+    <span class="n">created</span><span class="o">.</span><span class="n">pm_uid</span><span class="p">,</span>
+    <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"FLOAT"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">"min"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">"max"</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"LENGTH"</span><span class="p">},</span>
+    <span class="n">expected_digest</span><span class="o">=</span><span class="n">before</span><span class="p">[</span><span class="s2">"digest"</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="n">result</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"committed"</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s2">"diagnostics"</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">storage</span></code> changes, the Property ID that is requested or kept is
+checked against the storage it moves to.</p></li>
+<li><p>No callback is executed by validation, saving or reading. On Init does
+not run.</p></li>
+<li><p>Stored values follow the normal registration rules: changing <code class="docutils literal notranslate"><span class="pre">type</span></code> or
+<code class="docutils literal notranslate"><span class="pre">size</span></code> discards the stored value, as in the editor. Stored values are
+not restored after a failure.</p></li>
+<li><p>A committed group, or a group that ends <code class="docutils literal notranslate"><span class="pre">unknown</span></code>, increments
+<code class="docutils literal notranslate"><span class="pre">read_pm()[&quot;version&quot;]</span></code>.</p></li>
+<li><p>The selected menu and an open draft are not changed.</p></li>
+<li><p>An exception raised while the definition group is saved is re-raised
+after the saved definition is restored. Its note states whether the
+restore was confirmed. Call <a class="reference internal" href="menus.html#pme.editing.read_pm" title="pme.editing.read_pm"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_pm()</span></code></a> before retrying.</p></li>
+<li><p>The call does not save Preferences to disk, add an Undo step, or display
+the Property.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="property_stack.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Property Stack</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="hotkeys.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Hotkeys</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Pluglug and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Property</a><ul>
+<li><a class="reference internal" href="#reading-a-property">Reading a Property</a></li>
+<li><a class="reference internal" href="#where-the-value-lives">Where the value lives</a></li>
+<li><a class="reference internal" href="#property-definition">Property definition</a><ul>
+<li><a class="reference internal" href="#enum-items">Enum items</a></li>
+<li><a class="reference internal" href="#subtype-values">Subtype values</a></li>
+<li><a class="reference internal" href="#unit-values">Unit values</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reset-rules">Reset rules</a></li>
+<li><a class="reference internal" href="#functions">Functions</a><ul>
+<li><a class="reference internal" href="#pme.editing.update_property"><code class="docutils literal notranslate"><span class="pre">update_property()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9caaf7ed"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
+    </body>
+</html>

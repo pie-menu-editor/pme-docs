@@ -1,0 +1,702 @@
+<!doctype html>
+<html class="no-js" lang="ja" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="索引" href="../genindex.html"><link rel="search" title="検索" href="../search.html"><link rel="next" title="同梱ユーティリティー" href="bundled_utilities.html"><link rel="prev" title="スクリプティング" href="scripting.html">
+        <link rel="canonical" href="https://docs.pie-menu-editor.com/ja/reference/script_management.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
+        <title>スクリプトの管理 - Pie Menu Editor 2.4 ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=6b3a701d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/editor-overview.css?v=8fac9edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/hotkey-modes.css?v=682cae44" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #0d82d0;
+  --color-brand-content: #0d82d0;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #88c0d0;
+  --color-brand-content: #88c0d0;
+  --color-background-primary: #2e3440;
+  --color-background-secondary: #3b4252;
+  --color-background-hover: #434c5e;
+  --color-background-border: #4c566a;
+  --color-foreground-primary: #eceff4;
+  --color-foreground-secondary: #d8dee9;
+  --color-foreground-muted: #aeb7c5;
+  --color-link: #88c0d0;
+  --color-link-underline: #81a1c1;
+  --color-card-background: #3b4252;
+  --color-card-border: #4c566a;
+  --color-sidebar-background: #2b303b;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    (function () {
+        if (window.__PMEBeaconInitialized) {
+            return;
+        }
+
+        window.__PMEBeaconInitialized = true;
+
+        !function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+        window.Beacon('init', 'e458ab6a-6436-4e96-a0b6-038336504b24');
+        window.Beacon('config', {
+            display: {
+                style: 'manual'
+            }
+        });
+
+        window.PMEDocs = window.PMEDocs || {};
+        window.PMEDocs.beaconPrefillTemplates = {
+            supportRequest: [
+                'Summary:',
+                '- What went wrong?',
+                '',
+                'Steps to reproduce:',
+                '1.',
+                '2.',
+                '3.',
+                '',
+                'What happened:',
+                '- Describe the actual result.',
+                '',
+                'Environment:',
+                '- Blender version:',
+                '- PME version:',
+                '- OS:',
+                '',
+                'Attachments:',
+                '- PME setup JSON:',
+                '- Console output / screenshot:',
+                '- Small .blend file (if relevant):',
+                '',
+                'Additional notes:',
+                '- Anything else that may help.'
+            ].join('\n')
+        };
+
+        window.PMEDocs.openSupportBeacon = function (event, templateName) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            if (typeof window.Beacon === 'function') {
+                const prefillText = window.PMEDocs.beaconPrefillTemplates[templateName];
+                if (prefillText) {
+                    window.Beacon('prefill', {
+                        text: prefillText
+                    });
+                }
+
+                window.Beacon('open');
+                window.Beacon('navigate', '/ask/message/');
+                return false;
+            }
+
+            return true;
+        };
+
+        document.addEventListener('click', function (event) {
+            const trigger = event.target.closest('[data-beacon-open]');
+            if (!trigger) {
+                return;
+            }
+
+            window.PMEDocs.openSupportBeacon(event, trigger.dataset.beaconTemplate);
+        });
+    }());
+</script></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Pie Menu Editor 2.4 ドキュメント</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">Pie Menu Editor 2.4 ドキュメント</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="検索" name="q" aria-label="検索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">はじめる</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">インストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/basic_pie_menu.html">基本的なパイメニューの作成</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">使用例とアイデア</a><input aria-label="Toggle navigation of 使用例とアイデア" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripting_workflow.html">コード例</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">エディタ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../editors/editor_common_elements.html">エディターの共通要素</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hotkey_modes.html">Hotkey Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/pie_menu_editor.html">Pie Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/vector_menu_editor.html">Vector Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/regular_menu_editor.html">Regular Menu Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/popup_dialog_editor.html">Pop-up Dialog Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/floating_panel_editor.html">Floating Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/sticky_key_editor.html">Sticky Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/stack_key_editor.html">Stack Key Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/macro_operator_editor.html">Macro Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/modal_operator_editor.html">Modal Operator Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/property_editor.html">Property Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/property_stack_editor.html">Property Stack Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/context_router_editor.html">Context Router Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/side_panel_editor.html">Side Panel Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/hiding_unused_panels.html">Hiding Unused Panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/interactive_panels.html">Interactive Panels と Extend Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/ui_customization.html">UI Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/context_menu.html">キャプチャーメニュー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/custom_icons.html">カスタムアイコン</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/settings.html">Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">スクリプティング</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="command_text.html">コードの入力と実行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">スクリプティングリファレンス</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">スクリプトの管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bundled_utilities.html">同梱ユーティリティー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/context_browser.html">Context Browser</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">オーサリング API</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="authoring/index.html">概要</a><input aria-label="Toggle navigation of 概要" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="authoring/concepts.html">基本事項</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/results.html">結果とガード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/menus.html">メニュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/slots.html">スロット</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/layout.html">レイアウトの行とパネル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/settings.html">メニューの種類ごとの設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/hotkeys.html">ホットキー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/property.html">Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/property_stack.html">Property Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/router.html">Context Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/export_validate.html">書き出しと検証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/resources.html">リソース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authoring/execution.html">コード実行・ユーザープロパティ・identity</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="authoring/recipes/index.html">レシピ</a><input aria-label="Toggle navigation of レシピ" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/layout_build_panel_rows.html">パネルを1行ずつ組み立てる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/property_stack_new.html">Property Stack を作成して状態を表示する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/property_switch.html">設定を Property のスイッチにする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/router_add_branch.html">Router の分岐を追加して条件を編集する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authoring/recipes/slots_link_child_menu.html">子メニューへリンクし、アイコンのフラグを保つ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">参考資料</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keymap_guide.html">キーマップの選び方</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keymap_duplicates.html">キーマップの重複</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poll_method.html">Poll Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">用語集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_locations.html">保存先とフォルダ構成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boot_options.html">起動オプション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_options.html">開発者オプション</a></li>
+<li class="toctree-l1"><a class="reference internal" href="original_author_videos.html">ビデオチュートリアル</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">サポート</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/faq.html#known-issues">既知の問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/get_support.html">サポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support_community/changelog.html">Change Log</a></li>
+</ul>
+
+</div>
+</div>
+<nav class="documentation-languages" aria-label="言語">
+  
+  <a href="../../reference/script_management.html" lang="en" hreflang="en" aria-label="English" title="English"><span aria-hidden="true">🇺🇸</span></a>
+  
+  <a href="script_management.html" lang="ja" hreflang="ja" aria-label="日本語" title="日本語" aria-current="true"><span aria-hidden="true">🇯🇵</span></a>
+  
+</nav>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.documentation-languages a')];
+  const targets = links.map(link => link.getAttribute('href'));
+  function syncFragment() {
+    links.forEach((link, index) => { link.href = targets[index] + window.location.hash; });
+  }
+  syncFragment();
+  window.addEventListener('hashchange', syncFragment);
+})();
+</script>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/reference/script_management.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="script-management">
+<span id="id1"></span><h1>スクリプトの管理<a class="headerlink" href="#script-management" title="Link to this heading">¶</a></h1>
+<p>PMEの <strong>Scripts</strong> 一覧では、<code class="docutils literal notranslate"><span class="pre">execute_script()</span></code> で呼び出すPythonファイルを管理できます。
+ファイルを探して編集したり、メニューに貼り付ける呼び出しコードをコピーしたり、
+そのファイルを使っているメニューへ戻ったりできます。</p>
+<p>たとえば、スロットのCommand欄に次のように書くと、保存したファイルを実行できます。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">execute_script</span><span class="p">(</span><span class="s2">"scripts/my_tool.py"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>このページでは、その呼び出し先のファイルを作成・編集・保存する手順を説明します。
+<code class="docutils literal notranslate"><span class="pre">execute_script()</span></code> の引数や戻り値は <a class="reference internal" href="scripting.html"><span class="doc">スクリプティング</span></a> を参照してください。</p>
+<p>一覧は次の2か所から開けます。</p>
+<ul class="simple">
+<li><p><strong>設定を整理する場合：</strong> PMEの Preferences &gt; Settings &gt; Resources &gt; <strong>Scripts</strong>。</p></li>
+<li><p><strong>コードを編集する場合：</strong> BlenderのText Editorでサイドバー（Nキー）を開き、<strong>PME</strong> タブ &gt; <strong>Scripts</strong>。</p></li>
+</ul>
+<p>最初に保存先を設定する場合は、<a class="reference internal" href="file_locations.html"><span class="doc">保存先とフォルダ構成</span></a> のScript Directoriesを参照してください。</p>
+<section id="id2">
+<h2>ファイルを探す<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>フォルダーの左の三角を押すと、中のファイルが表示されます。
+数が多い場合は検索欄に文字を入れて絞り込めます。ファイルの場所も確認できます。
+Blenderの外で追加したファイルが見つからない場合は <strong>Refresh</strong> を押してください。</p>
+<p>Text Editor側では、ファイル名をクリックするとその場で開きます。
+Preferences側では、ファイルの行メニューから <strong>Edit</strong> を選びます。
+外部エディターを設定している場合はそちらで、未設定ならBlenderのText Editorで開きます。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>外部エディターは、Blenderの Preferences &gt; File Paths &gt; Text Editor で設定できます。
+設定後も <strong>Edit in Blender</strong> でBlender内の編集を選べます。
+Text Editor側から外部エディターへ移る場合は <strong>Edit Externally</strong> を使います。</p>
+</div>
+</section>
+<section id="id3">
+<h2>新しく作る・メニューで使う<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p><strong>メニューに追加しながら作る場合**は、スロットのCommand欄の補助メニューで **New Script</strong> を選びます。
+ファイルが作成され、<code class="docutils literal notranslate"><span class="pre">execute_script()</span></code> の呼び出しコードもスロットに入ります。</p>
+<p><strong>先にファイルだけ作る場合**は、Scripts一覧の **New</strong> （＋）を押します。
+作成したファイルがエディターで開くので、ひな型の処理部分を書き換えて保存してください。
+保存先は、先頭のScript Directoryの <code class="docutils literal notranslate"><span class="pre">scripts/</span></code> フォルダーです。
+そのフォルダーがない場合は、登録したディレクトリーの直下に作成されます。既存ファイルは上書きしません。</p>
+<p><strong>既存ファイルをメニューで使う場合**は、その行の **Copy Reference</strong> で <code class="docutils literal notranslate"><span class="pre">execute_script()</span></code> の呼び出しコードをコピーし、
+スロットのCommand欄へ貼り付けます。Slot Editorの <strong>Call External Script</strong> から選ぶこともできます。</p>
+</section>
+<section id="id4">
+<h2>編集して保存する<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>Text Editorで変更すると、一覧のファイル名の右側に保存アイコンが出ます。
+これを押すか、Text Editorの <strong>Save</strong> で保存してください。
+保存後、次に <code class="docutils literal notranslate"><span class="pre">execute_script()</span></code> で呼び出すと、新しい内容で動きます。</p>
+<p>まだファイルとして保存していないテキストや、登録先の外にあるテキストには、一覧の下に
+<strong>Save into Script Directory</strong> が表示されます。押すと保存先を選べます。
+保存後はScripts一覧から探せるようになり、<strong>Copy Reference</strong> も使えます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Blenderの外でも同じファイルが変更されている場合は、上書き前に <strong>Resolve Conflict</strong> が開きます。
+外部の内容を読み直す <strong>Reload</strong>、Blender側の内容を保存する <strong>Save</strong>、
+Blender内のテキストとして保持する <strong>Make Internal</strong> から選んでください。</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">保存したのに変更が反映されない場合</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p>Blenderの外で追加したファイルを一覧に出すには <strong>Refresh</strong> を押します。</p></li>
+<li><p>スクリプトがimportする別のPythonモジュールは、ファイルを保存しただけでは読み直されません。
+Blenderを再起動するか、コード側で <code class="docutils literal notranslate"><span class="pre">importlib.reload</span></code> を使って再読み込みします。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/autorun/</span></code> 内のスクリプトは起動時に実行されます。変更後はPMEを再有効化してください。</p></li>
+</ul>
+</div>
+</details></section>
+<section id="id5">
+<h2>使っているメニューへ戻る<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>ファイルの横にある <strong>Used by</strong> （リンクのアイコン）を押すと、<code class="docutils literal notranslate"><span class="pre">execute_script()</span></code> でそのファイルを呼び出しているメニューに移動します。
+複数のスロットで使っている場合は、移動先を一覧から選べます。</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Used byに表示される範囲</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">保存済みのCommand・Customスロットに、<code class="docutils literal notranslate"><span class="pre">execute_script(&quot;scripts/tool.py&quot;)</span></code> のように
+ファイル名を直接書いた呼び出しを探します。
+コード内でファイル名を組み立てている場合や、autorunで登録した関数を名前で呼ぶ場合は一覧に含まれません。
+構文エラーのあるコード、Poll、Context Routerのコードも対象外です。
+ここに表示されないことだけでは「使われていない」とは判断できません。</p>
+<p class="sd-card-text">移動先はPMEのEditorタブです。Slot Editorは自動では開きません。
+Text Editor側から操作した場合、Preferencesが閉じていれば開きます。</p>
+</div>
+</details></section>
+<section id="id6">
+<h2>警告が出たら<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<p>ファイル名の左にある警告の印を押すと、理由や候補の場所を確認できます。
+Slot Editorにも、呼び出し先の問題を知らせる印が表示されます。</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>状態</p></th>
+<th class="head"><p>確認すること</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ファイルが見つからない（Missing）</p></td>
+<td><p>ファイルの移動・改名や、呼び出しコードのパスを確認してください。
+実行時のメッセージにある <strong>Show in Scripts</strong> から、該当する項目へ移動できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>同じパスが複数ある</p></td>
+<td><p>複数のScript Directoryに同じ相対パスのファイルがあります。
+どちらを使うか決められないため実行されません。警告に出る場所を確認してください。</p></td>
+</tr>
+<tr class="row-even"><td><p>ファイルを読めない</p></td>
+<td><p>表示された理由を確認し、ファイルの場所やアクセス権を見直してください。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">一覧の分類と、その他の表示</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Preferences側の <strong>Outside Script Directories</strong> は、登録先の外の絶対パスや同梱のサンプルを
+呼び出している項目です。<strong>Missing</strong> は呼び出し先が見つからない項目です。
+この2分類はText Editor側の一覧には表示されません。</p>
+<p class="sd-card-text">Text Editorの一覧の下には、現在開いているテキストの保存状態も表示されます。</p>
+<ul class="simple">
+<li><p><strong>Not listed yet：</strong> 一覧の更新後に保存されたファイルです。Refreshで更新してください。</p></li>
+<li><p><strong>Not in a Script Directory：</strong> 登録先の外に保存されています。</p></li>
+<li><p><strong>Internal text, not saved as a file：</strong> Blender内にだけ存在し、外部ファイルには保存されていません。</p></li>
+</ul>
+<p class="sd-card-text">ファイルの場所を開くには <strong>Open Folder</strong> を使います。
+Text EditorのOpen・Save Asでは、ファイルブラウザー左側の <strong>Pie Menu Editor</strong> から
+登録先へすばやく移動できます。</p>
+</div>
+</details></section>
+<section id="id7">
+<h2>ひな型とフォルダー内の案内<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
+<p>新しいスクリプトには、PMEのスロットとText Editorの両方から実行できるひな型が入っています。
+ただし、Text Editorから実行する場合のコンテキストはText Editor自身です。
+3D Viewなどを必要とする処理は、実際に使うメニューからも確認してください。</p>
+<p><strong>New</strong> と <strong>New Script</strong> は次の内容を書き込みます。
+先頭の <code class="docutils literal notranslate"><span class="pre">execute_script()</span></code> の例の <code class="docutils literal notranslate"><span class="pre">scripts/&lt;name&gt;.py</span></code> は、作成したファイルの参照に置き換わります。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""&lt;One line: what this script does.&gt;</span>
+
+<span class="sd">Called from a PME slot:</span>
+<span class="sd">    execute_script("scripts/&lt;name&gt;.py", example="value")</span>
+<span class="sd">Runs from the Text Editor (Alt+P) as well: kwargs is then empty, and C is the</span>
+<span class="sd">Text Editor's own context, not the area that called the slot.</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">bpy</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"C"</span><span class="p">,</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>        <span class="c1"># PME provides C / D; the Text Editor does not</span>
+<span class="n">D</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"D"</span><span class="p">,</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">kwargs</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"kwargs"</span><span class="p">,</span> <span class="p">{})</span>       <span class="c1"># the slot's keyword arguments, {} from the Text Editor</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">example</span><span class="o">=</span><span class="s2">"value"</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">return_value</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">scripts/README_PME.md</span></code> には、メニューからの呼び出し方や使える変数、サンプルの場所が書かれています。
+スクリプトを書き始めるときや、AIに編集を依頼するときの案内として使えます。
+PMEが <code class="docutils literal notranslate"><span class="pre">scripts/</span></code> のある保存先を設定したり、そこに新しいファイルを作ったりするときに用意され、
+既存のREADMEは上書きされません。</p>
+<div class="admonition seealso">
+<p class="admonition-title">参考</p>
+<p><a class="reference internal" href="file_locations.html"><span class="doc">保存先とフォルダ構成</span></a> — 保存先を追加する・整理する</p>
+<p><a class="reference internal" href="scripting.html"><span class="doc">スクリプティング</span></a> — 関数・引数・戻り値を調べる</p>
+<p><a class="reference internal" href="bundled_utilities.html"><span class="doc">同梱ユーティリティー</span></a> — 同梱の補助関数を使う</p>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="bundled_utilities.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">同梱ユーティリティー</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="scripting.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">スクリプティング</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Pluglug and contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">スクリプトの管理</a><ul>
+<li><a class="reference internal" href="#id2">ファイルを探す</a></li>
+<li><a class="reference internal" href="#id3">新しく作る・メニューで使う</a></li>
+<li><a class="reference internal" href="#id4">編集して保存する</a></li>
+<li><a class="reference internal" href="#id5">使っているメニューへ戻る</a></li>
+<li><a class="reference internal" href="#id6">警告が出たら</a></li>
+<li><a class="reference internal" href="#id7">ひな型とフォルダー内の案内</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=05b04c43"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    </body>
+</html>
